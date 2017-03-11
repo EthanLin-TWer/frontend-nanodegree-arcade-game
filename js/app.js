@@ -51,7 +51,7 @@ Player.prototype.render = function () {
 };
 
 Player.prototype.handleInput = function (movement) {
-    var verticalCenter = 54;
+    var verticalCenter = 58;
     var horizonGridDistance = 101;
     var verticalGridDistance = 83;
 
@@ -69,7 +69,7 @@ Player.prototype.handleInput = function (movement) {
 var allEnemies = [Enemy(20, 58, 50), Enemy(200, 58, 200),
     Enemy(303, 58 + 83, 75), Enemy(20, 58 + 83, 400),
     Enemy(200, 58 + 83 * 2, 290), Enemy(2, 58 + 83 * 2, 50)];
-var player = Player(202, 303);
+var player = Player(202, 307);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
