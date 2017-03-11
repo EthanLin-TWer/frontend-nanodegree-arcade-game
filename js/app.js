@@ -45,8 +45,14 @@ Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function () {
-
+Player.prototype.handleInput = function (movement) {
+    console.log(movement)
+    var oneGrid = 101;
+    
+    if (movement === 'left') this.x += -oneGrid;
+    if (movement === 'right') this.x += oneGrid;
+    if (movement === 'up') this.y += -oneGrid;
+    if (movement === 'down') this.y += oneGrid;
 };
 
 // Now instantiate your objects.
