@@ -43,7 +43,7 @@ var Player = function (x, y) {
 };
 
 Player.prototype.update = function (dt) {
-    
+
 };
 
 Player.prototype.render = function () {
@@ -54,12 +54,12 @@ Player.prototype.handleInput = function (movement) {
     var verticalCenter = 54;
     var horizonGridDistance = 101;
     var verticalGridDistance = 83;
-    
-    if (movement === 'left' && this.x >= horizonGridDistance) this.x += -horizonGridDistance;
+
+    if (movement === 'left' && this.x >= horizonGridDistance) this.x -= horizonGridDistance;
     if (movement === 'right' && this.x < horizonGridDistance * 4) this.x += horizonGridDistance;
-    if (movement === 'up' && this.y >= verticalCenter) this.y += -verticalGridDistance;
+    if (movement === 'up' && this.y >= verticalCenter) this.y -= verticalGridDistance;
     if (movement === 'down' && this.y < verticalCenter + verticalGridDistance * 3) this.y += verticalGridDistance;
-    
+
     console.log('player moved, current position: ' + this.x + ', ' + this.y)
 };
 
