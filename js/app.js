@@ -30,6 +30,11 @@ Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+Enemy.prototype.checkCollision = function (object) {
+    if (object.y !== this.y) return false;
+    return Math.abs(object.x - this.x) <= 12;
+};
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
