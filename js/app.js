@@ -54,7 +54,7 @@ Player.prototype.handleInput = function (movement) {
     console.log(movement)
     var oneGrid = 101;
     var horizonGridDistance = 101;
-    var verticalGridDistance = 85;
+    var verticalGridDistance = 83;
     
     if (movement === 'left' && this.x >= horizonGridDistance) this.x += -horizonGridDistance;
     if (movement === 'right' && this.x < horizonGridDistance * 4) this.x += horizonGridDistance;
