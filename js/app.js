@@ -17,6 +17,9 @@ var Enemy = function (x, y, speed) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
     this.x = this.x + dt * this.speed;
+    if (this.x > 505) {
+        this.x -= 505;
+    }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
