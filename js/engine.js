@@ -104,6 +104,7 @@ var Engine = (function(global) {
         
         if (collisionHappened) {
             console.log('collision!')
+            player = Player(202, 307)
         }
     }
 
