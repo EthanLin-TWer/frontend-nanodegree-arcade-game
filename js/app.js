@@ -43,7 +43,8 @@ var Player = function (x, y) {
     player.x = x;
     player.y = y;
     player.sprite = 'images/char-boy.png';
-
+    player.stars = 'images/Star.png';
+    
     return player;
 };
 
@@ -66,6 +67,13 @@ Player.prototype.handleInput = function (movement) {
     if (movement === 'down' && this.y < verticalCenter + verticalGridDistance * 3) this.y += verticalGridDistance;
 
     console.log('player moved, current position: ' + this.x + ', ' + this.y)
+};
+
+Player.prototype.checkWins = function () {
+    if (this.y === -25) {
+        console.log(this.stars);
+        ctx.drawImage(Resources.get(this.stars), this.x, this.y + 50);
+    }
 };
 
 // Now instantiate your objects.
