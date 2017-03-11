@@ -43,6 +43,7 @@ var Player = function (x, y) {
 };
 
 Player.prototype.update = function (dt) {
+    
 };
 
 Player.prototype.render = function () {
@@ -53,10 +54,12 @@ Player.prototype.handleInput = function (movement) {
     console.log(movement)
     var oneGrid = 101;
     
-    if (movement === 'left') this.x += -oneGrid;
-    if (movement === 'right') this.x += oneGrid;
-    if (movement === 'up') this.y += -oneGrid;
-    if (movement === 'down') this.y += oneGrid;
+    if (movement === 'left' && this.x >= oneGrid) this.x += -oneGrid;
+    if (movement === 'right' && this.x < oneGrid * 4) this.x += oneGrid;
+    if (movement === 'up' && this.y > -oneGrid) this.y += -oneGrid;
+    if (movement === 'down' && this.y < oneGrid * 3) this.y += oneGrid;
+    
+    console.log('player moved, current position: ' + this.x + ', ' + this.y)
 };
 
 // Now instantiate your objects.
