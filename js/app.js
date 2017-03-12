@@ -96,15 +96,21 @@ Player.prototype.checkWins = function () {
 var entityCenter = GameBoard.entityCenter,
 	cellWidth = GameBoard.cellWidth,
 	cellHeight = GameBoard.cellHeight;
+var row = function (x) {
+	return entityCenter + cellHeight * (x - 1)
+}
+var column = function (x) {
+	return cellWidth * (x - 1)
+}
 var allEnemies = [
-	new Enemy(20, entityCenter, Speed.EXTREMELY_SLOW),	// first row 
-	new Enemy(200, entityCenter, Speed.SLOW),				// first row
-	new Enemy(303, entityCenter + cellHeight * 1, Speed.EXTREMELY_SLOW),// second row
-	new Enemy(20, entityCenter + cellHeight * 1, Speed.EXTREMELY_FAST), // second row
-	new Enemy(200, entityCenter + cellHeight * 2, Speed.NORMAL),		  // third row
-	new Enemy(2, entityCenter + cellHeight * 2, Speed.EXTREMELY_SLOW)   // third row
+	new Enemy(20, row(1), Speed.EXTREMELY_SLOW),	// first row 
+	new Enemy(200, row(1), Speed.SLOW),				// first row
+	new Enemy(303, row(2) + cellHeight * 1, Speed.EXTREMELY_SLOW),// second row
+	new Enemy(20, row(2) + cellHeight * 1, Speed.EXTREMELY_FAST), // second row
+	new Enemy(200, row(3) + cellHeight * 2, Speed.NORMAL),		  // third row
+	new Enemy(2, row(3) + cellHeight * 2, Speed.EXTREMELY_SLOW)   // third row
 ];
-var player = new Player(cellWidth * 2, entityCenter + cellHeight * 3);
+var player = new Player(column(3), row(4));
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
