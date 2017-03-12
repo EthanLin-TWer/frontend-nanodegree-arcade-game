@@ -81,7 +81,6 @@ var Engine = (function (global) {
 	function update(dt) {
 		updateEntities(dt);
 		checkCollisions();
-		checkWins();
 	}
 
 	/* This is called by the update function and loops through all of the
@@ -108,11 +107,7 @@ var Engine = (function (global) {
 			player = new Player(202, 307)
 		}
 	}
-
-	function checkWins() {
-		player.checkWins();
-	}
-
+	
 	/* This function initially draws the "game level", it will then call
 	 * the renderEntities function. Remember, this function is called every
 	 * game tick (or loop of the game engine) because that's how games work -

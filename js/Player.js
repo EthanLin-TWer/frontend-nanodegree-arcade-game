@@ -11,7 +11,7 @@ var Player = function (x, y) {
 utils.inherits(Player, Movable);
 
 Player.prototype.update = function (dt) {
-
+	this.checkWins()
 };
 
 Player.prototype.handleInput = function (movement) {
@@ -29,7 +29,6 @@ Player.prototype.handleInput = function (movement) {
 
 Player.prototype.checkWins = function () {
 	if (this.y === GameBoard.destinationCenter) {
-		console.log(this.stars);
 		ctx.drawImage(Resources.get(this.stars), this.x, this.y + 50);
 	}
 };
