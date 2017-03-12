@@ -17,6 +17,9 @@ var GameBoard = (function () {
 		return entityCenter + cellHeight * (x - 1)
 	};
 
+	var exceedsLeftBoundary = function (x) {
+		return x < 0
+	};
 	return {
 		cellWidth: cellWidth,
 		cellHeight: cellHeight,
@@ -31,7 +34,9 @@ var GameBoard = (function () {
 		collisionRadius: collisionRadius,
 		
 		row: row,
-		column: column
+		column: column,
+		
+		exceedsLeftBoundary: exceedsLeftBoundary
 	}
 })();
 
