@@ -26,7 +26,7 @@ var Engine = (function (global) {
 		lastTime;
 
 	canvas.width = GameBoard.boardWidth;
-	canvas.height = 606;
+	canvas.height = GameBoard.boardHeight;
 	doc.body.appendChild(canvas);
 
 	/* This function serves as the kickoff point for the game loop itself
