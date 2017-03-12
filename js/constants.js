@@ -1,5 +1,5 @@
 var GameBoard = (function () {
-	var cellWidth = 101, horizonCells  = 5;
+	var cellWidth = 101, horizonCells = 5;
 	var cellHeight = 83, verticalCells = 6;
 	var entityCenter = 58;
 	var destinationCenter = entityCenter - cellHeight;
@@ -9,7 +9,7 @@ var GameBoard = (function () {
 	// the smaller the collision radius, the closer you can be with an enemy 
 	// without being judged as 'collision' and die
 	var collisionRadius = 12;
-	
+
 	var column = function (x) {
 		return cellWidth * (x - 1);
 	};
@@ -42,12 +42,12 @@ var GameBoard = (function () {
 		boardHeight: boardHeight,
 		horizonCells: horizonCells,
 		verticalCells: verticalCells,
-		
+
 		collisionRadius: collisionRadius,
-		
+
 		row: row,
 		column: column,
-		
+
 		exceedsLeftBoundary: exceedsLeftBoundary,
 		exceedsRightBoundary: exceedsRightBoundary,
 		exceedsTopBoundary: exceedsTopBoundary,
@@ -55,14 +55,13 @@ var GameBoard = (function () {
 	}
 })();
 
-var Speed = (function () {
-	return {
-		'EXTREMELY_SLOW': 100,
-		'VERY_SLOW': 150,
-		'SLOW': 200,
-		'NORMAL': 350,
-		'FAST': 500,
-		'VERY_FAST': 700,
-		'EXTREMELY_FAST': 1000
-	}
-})();
+
+var Speed = {
+	'EXTREMELY_SLOW': 100,
+	'VERY_SLOW': 150,
+	'SLOW': 200,
+	'NORMAL': 350,
+	'FAST': 500,
+	'VERY_FAST': 700,
+	'EXTREMELY_FAST': 1000
+};
