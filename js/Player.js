@@ -19,12 +19,10 @@ Player.prototype.handleInput = function (movement) {
 	var cellWidth = GameBoard.cellWidth;
 	var cellHeight = GameBoard.cellHeight;
 
-	if (movement === 'left' && this.x >= cellWidth) this.x -= cellWidth;
-	if (movement === 'right' && this.x < cellWidth * 4) this.x += cellWidth;
-	if (movement === 'up' && this.y >= entityCenter) this.y -= cellHeight;
-	if (movement === 'down' && this.y < entityCenter + cellHeight * 3) this.y += cellHeight;
-
-	console.log('player moved, current position: ' + this.x + ', ' + this.y)
+	if (movement === 'left' && this.x >= cellWidth) this.move(-cellWidth, 0);
+	if (movement === 'right' && this.x < cellWidth * 4) this.move(cellWidth, 0);
+	if (movement === 'up' && this.y >= entityCenter) this.move(0, -cellHeight);
+	if (movement === 'down' && this.y < entityCenter + cellHeight * 3) this.move(0, cellHeight);
 };
 
 Player.prototype.checkWins = function () {
