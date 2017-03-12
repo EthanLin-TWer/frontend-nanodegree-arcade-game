@@ -103,12 +103,12 @@ var column = function (x) {
 	return cellWidth * (x - 1)
 }
 var allEnemies = [
-	new Enemy(20, row(1), Speed.EXTREMELY_SLOW),	 
-	new Enemy(200, row(1), Speed.SLOW),				
+	new Enemy(20, row(1), Speed.EXTREMELY_SLOW),
+	new Enemy(200, row(1), Speed.SLOW),
 	new Enemy(303, row(2), Speed.EXTREMELY_SLOW),
-	new Enemy(20, row(2), Speed.EXTREMELY_FAST), 
-	new Enemy(200, row(3), Speed.NORMAL),		  
-	new Enemy(2, row(3), Speed.EXTREMELY_SLOW)   
+	new Enemy(20, row(2), Speed.EXTREMELY_FAST),
+	new Enemy(200, row(3), Speed.NORMAL),
+	new Enemy(2, row(3), Speed.EXTREMELY_SLOW)
 ];
 var player = new Player(column(3), row(4));
 
