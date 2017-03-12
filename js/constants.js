@@ -6,6 +6,10 @@ var GameBoard = (function () {
 	var boardWidth = cellWidth * horizonCells;
 	var boardHeight = 606; // fixed height, calculated by those 101*171 pngs
 
+	// the smaller the collision radius, the closer you can be with an enemy 
+	// without being judged as 'collision' and die
+	var collisionRadius = 12;
+	
 	var column = function (x) {
 		return cellWidth * (x - 1);
 	};
@@ -23,6 +27,8 @@ var GameBoard = (function () {
 		boardHeight: boardHeight,
 		horizonCells: horizonCells,
 		verticalCells: verticalCells,
+		
+		collisionRadius: collisionRadius,
 		
 		row: row,
 		column: column

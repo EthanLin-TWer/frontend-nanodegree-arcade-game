@@ -45,7 +45,7 @@ Enemy.prototype.render = function () {
 
 Enemy.prototype.checkCollision = function (object) {
 	if (object.y !== this.y) return false;
-	return Math.abs(object.x - this.x) <= 12;
+	return Math.abs(object.x - this.x) <= GameBoard.collisionRadius;
 };
 
 // Now write your own player class
