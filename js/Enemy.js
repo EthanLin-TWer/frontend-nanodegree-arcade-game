@@ -16,8 +16,8 @@ utils.inherits(Enemy, Movable);
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
 	this.move(dt * this.speed, 0);
-	if (this.x > 505) {
-		this.x -= 505;
+	if (this.x > GameBoard.boardWidth) {
+		this.move(-GameBoard.boardWidth, 0);
 	}
 	// You should multiply any movement by the dt parameter
 	// which will ensure the game runs at the same speed for
