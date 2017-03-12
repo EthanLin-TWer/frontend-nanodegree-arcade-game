@@ -20,6 +20,18 @@ var GameBoard = (function () {
 	var exceedsLeftBoundary = function (x) {
 		return x < 0
 	};
+
+	var exceedsRightBoundary = function (x) {
+		return x >= boardWidth
+	};
+
+	var exceedsTopBoundary = function (y) {
+		return y < destinationCenter
+	};
+
+	var exceedsBottomBoundary = function (y) {
+		return y >= entityCenter + cellHeight * (verticalCells - 1)
+	};
 	return {
 		cellWidth: cellWidth,
 		cellHeight: cellHeight,
@@ -36,7 +48,10 @@ var GameBoard = (function () {
 		row: row,
 		column: column,
 		
-		exceedsLeftBoundary: exceedsLeftBoundary
+		exceedsLeftBoundary: exceedsLeftBoundary,
+		exceedsRightBoundary: exceedsRightBoundary,
+		exceedsTopBoundary: exceedsTopBoundary,
+		exceedsBottomBoundary: exceedsBottomBoundary
 	}
 })();
 
