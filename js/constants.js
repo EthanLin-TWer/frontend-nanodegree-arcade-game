@@ -9,10 +9,13 @@ var GameBoard = (function () {
 	return {
 		cellWidth: cellWidth,
 		cellHeight: cellHeight,
+		entityCenter: entityCenter,
+		destinationCenter: destinationCenter,
+
 		boardWidth: boardWidth,
 		boardHeight: boardHeight,
-		entityCenter: entityCenter,
-		destinationCenter: destinationCenter
+		horizonCells: horizonCells,
+		verticalCells: verticalCells
 	}
 })();
 
