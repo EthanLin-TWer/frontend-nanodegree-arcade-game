@@ -105,10 +105,10 @@ var column = function (x) {
 var allEnemies = [
 	new Enemy(20, row(1), Speed.EXTREMELY_SLOW),	// first row 
 	new Enemy(200, row(1), Speed.SLOW),				// first row
-	new Enemy(303, row(2) + cellHeight * 1, Speed.EXTREMELY_SLOW),// second row
-	new Enemy(20, row(2) + cellHeight * 1, Speed.EXTREMELY_FAST), // second row
-	new Enemy(200, row(3) + cellHeight * 2, Speed.NORMAL),		  // third row
-	new Enemy(2, row(3) + cellHeight * 2, Speed.EXTREMELY_SLOW)   // third row
+	new Enemy(303, row(2), Speed.EXTREMELY_SLOW),// second row
+	new Enemy(20, row(2), Speed.EXTREMELY_FAST), // second row
+	new Enemy(200, row(3), Speed.NORMAL),		  // third row
+	new Enemy(2, row(3), Speed.EXTREMELY_SLOW)   // third row
 ];
 var player = new Player(column(3), row(4));
 
