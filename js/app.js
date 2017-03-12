@@ -72,8 +72,8 @@ Player.prototype.render = function () {
 
 Player.prototype.handleInput = function (movement) {
 	var verticalCenter = 58;
-	var horizonGridDistance = 101;
-	var verticalGridDistance = 83;
+	var horizonGridDistance = GameBoard.cellWidth;
+	var verticalGridDistance = GameBoard.cellHeight;
 
 	if (movement === 'left' && this.x >= horizonGridDistance) this.x -= horizonGridDistance;
 	if (movement === 'right' && this.x < horizonGridDistance * 4) this.x += horizonGridDistance;
