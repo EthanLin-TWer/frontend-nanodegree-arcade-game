@@ -15,7 +15,7 @@ utils.inherits(Enemy, Movable);
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
-	this.x = this.x + dt * this.speed;
+	this.move(dt * this.speed, 0);
 	if (this.x > 505) {
 		this.x -= 505;
 	}
