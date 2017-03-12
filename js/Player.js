@@ -15,7 +15,6 @@ Player.prototype.update = function (dt) {
 };
 
 Player.prototype.handleInput = function (movement) {
-	var entityCenter = GameBoard.entityCenter;
 	var cellWidth = GameBoard.cellWidth;
 	var cellHeight = GameBoard.cellHeight;
 
