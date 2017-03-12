@@ -1,21 +1,17 @@
-// Enemies our player must avoid
-var Enemy = function (x, y, speed) {
-	// Variables applied to each of our instances go here,
-	// we've provided one for you to get started
-	var sprite = 'images/enemy-bug.png';
-	var enemy = Movable.call(this, x, y, sprite);
-	enemy.speed = speed;
+var declareInheritance = function(subClass, superClass) {
+	var indirectionFunction = function () {}
+	indirectionFunction.prototype = superClass.prototype
 
-	// The image/sprite for our enemies, this uses
-	// a helper we've provided to easily load images
-	return enemy;
+	subClass.prototype = new indirectionFunction();
+	subClass.prototype.constructor = subClass;
 };
+
 
 var Movable = function (x, y, sprite) {
 	this.x = x;
 	this.y = y;
 	this.sprite = sprite;
-	
+
 	return this;
 };
 
@@ -28,11 +24,20 @@ Movable.prototype.render = function () {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var F = function () {
-}; // only used as indirection function for JavaScript inheritance
-F.prototype = Movable.prototype
-Enemy.prototype = new F();
-Enemy.prototype.constructor = Enemy;
+// Enemies our player must avoid
+var Enemy = function (x, y, speed) {
+	// Variables applied to each of our instances go here,
+	// we've provided one for you to get started
+	var sprite = 'images/enemy-bug.png';
+	var enemy = Movable.call(this, x, y, sprite);
+	enemy.speed = speed;
+
+	// The image/sprite for our enemies, this uses
+	// a helper we've provided to easily load images
+	return enemy;
+};
+declareInheritance(Enemy, Movable);
+
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -61,9 +66,7 @@ var Player = function (x, y) {
 
 	return player;
 };
-
-Player.prototype = new F();
-Player.prototype.constructor = Player;
+declareInheritance(Player, Movable);
 
 Player.prototype.update = function (dt) {
 
