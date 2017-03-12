@@ -2,9 +2,7 @@
 var Enemy = function (x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    var enemy = Object.create(Enemy.prototype);
-    enemy.x = x;
-    enemy.y = y;
+    var enemy = Movable.call(this, x, y);
     enemy.speed = speed;
 
     // The image/sprite for our enemies, this uses
@@ -12,6 +10,20 @@ var Enemy = function (x, y, speed) {
     enemy.sprite = 'images/enemy-bug.png';
     return enemy;
 };
+
+var Movable = function (x, y) {
+    this.x = x;
+    this.y = y;
+    return this;
+};
+
+Movable.prototype.move = function () {
+
+};
+
+var F = function () { }; // only used as indirection function for JavaScript inheritance 
+Enemy.prototype = new F();
+Enemy.prototype.constructor = Enemy;
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -39,14 +51,15 @@ Enemy.prototype.checkCollision = function (object) {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function (x, y) {
-    var player = Object.create(Player.prototype);
-    player.x = x;
-    player.y = y;
+    var player = Movable.call(this, x, y);
     player.sprite = 'images/char-boy.png';
     player.stars = 'images/Star.png';
     
     return player;
 };
+
+Player.prototype = new F();
+Player.prototype.constructor = Player;
 
 Player.prototype.update = function (dt) {
 
@@ -79,10 +92,10 @@ Player.prototype.checkWins = function () {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [Enemy(20, 58, 50), Enemy(200, 58, 200),
-    Enemy(303, 58 + 83, 75), Enemy(20, 58 + 83, 400),
-    Enemy(200, 58 + 83 * 2, 290), Enemy(2, 58 + 83 * 2, 50)];
-var player = Player(202, 307);
+var allEnemies = [new Enemy(20, 58, 50), new Enemy(200, 58, 200),
+    new Enemy(303, 58 + 83, 75), new Enemy(20, 58 + 83, 8000),
+    new Enemy(200, 58 + 83 * 2, 290), new Enemy(2, 58 + 83 * 2, 50)];
+var player = new Player(202, 307);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
