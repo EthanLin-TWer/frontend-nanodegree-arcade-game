@@ -71,14 +71,14 @@ Player.prototype.render = function () {
 };
 
 Player.prototype.handleInput = function (movement) {
-	var verticalCenter = 58;
+	var entityCenter = GameBoard.entityCenter;
 	var cellWidth = GameBoard.cellWidth;
 	var cellHeight = GameBoard.cellHeight;
 
 	if (movement === 'left' && this.x >= cellWidth) this.x -= cellWidth;
 	if (movement === 'right' && this.x < cellWidth * 4) this.x += cellWidth;
-	if (movement === 'up' && this.y >= verticalCenter) this.y -= cellHeight;
-	if (movement === 'down' && this.y < verticalCenter + cellHeight * 3) this.y += cellHeight;
+	if (movement === 'up' && this.y >= entityCenter) this.y -= cellHeight;
+	if (movement === 'down' && this.y < entityCenter + cellHeight * 3) this.y += cellHeight;
 
 	console.log('player moved, current position: ' + this.x + ', ' + this.y)
 };
