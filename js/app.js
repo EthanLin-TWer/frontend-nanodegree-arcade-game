@@ -93,15 +93,12 @@ Player.prototype.checkWins = function () {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var entityCenter = GameBoard.entityCenter,
-	cellWidth = GameBoard.cellWidth,
-	cellHeight = GameBoard.cellHeight;
 var row = function (x) {
-	return entityCenter + cellHeight * (x - 1)
-}
+	return GameBoard.entityCenter + GameBoard.cellHeight * (x - 1)
+};
 var column = function (x) {
-	return cellWidth * (x - 1)
-}
+	return GameBoard.cellWidth * (x - 1);
+};
 var allEnemies = [
 	new Enemy(20, row(1), Speed.EXTREMELY_SLOW),
 	new Enemy(200, row(1), Speed.SLOW),
