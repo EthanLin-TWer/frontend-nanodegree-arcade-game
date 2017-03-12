@@ -2,18 +2,20 @@
 var Enemy = function (x, y, speed) {
 	// Variables applied to each of our instances go here,
 	// we've provided one for you to get started
-	var enemy = Movable.call(this, x, y);
+	var sprite = 'images/enemy-bug.png';
+	var enemy = Movable.call(this, x, y, sprite);
 	enemy.speed = speed;
 
 	// The image/sprite for our enemies, this uses
 	// a helper we've provided to easily load images
-	enemy.sprite = 'images/enemy-bug.png';
 	return enemy;
 };
 
-var Movable = function (x, y) {
+var Movable = function (x, y, sprite) {
 	this.x = x;
 	this.y = y;
+	this.sprite = sprite;
+	
 	return this;
 };
 
@@ -21,8 +23,14 @@ Movable.prototype.move = function () {
 
 };
 
+// Draw the movable object on the screen, required method for game
+Movable.prototype.render = function () {
+	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
 var F = function () {
-}; // only used as indirection function for JavaScript inheritance 
+}; // only used as indirection function for JavaScript inheritance
+F.prototype = Movable.prototype
 Enemy.prototype = new F();
 Enemy.prototype.constructor = Enemy;
 
@@ -38,11 +46,6 @@ Enemy.prototype.update = function (dt) {
 	// all computers.
 };
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function () {
-	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
 Enemy.prototype.checkCollision = function (object) {
 	if (object.y !== this.y) return false;
 	return Math.abs(object.x - this.x) <= GameBoard.collisionRadius;
@@ -52,8 +55,8 @@ Enemy.prototype.checkCollision = function (object) {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function (x, y) {
-	var player = Movable.call(this, x, y);
-	player.sprite = 'images/char-boy.png';
+	var sprite = 'images/char-boy.png';
+	var player = Movable.call(this, x, y, sprite);
 	player.stars = 'images/Star.png';
 
 	return player;
@@ -64,10 +67,6 @@ Player.prototype.constructor = Player;
 
 Player.prototype.update = function (dt) {
 
-};
-
-Player.prototype.render = function () {
-	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 Player.prototype.handleInput = function (movement) {
