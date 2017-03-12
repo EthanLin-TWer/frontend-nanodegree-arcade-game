@@ -84,7 +84,7 @@ Player.prototype.handleInput = function (movement) {
 };
 
 Player.prototype.checkWins = function () {
-	if (this.y === -25) {
+	if (this.y === GameBoard.destinationCenter) {
 		console.log(this.stars);
 		ctx.drawImage(Resources.get(this.stars), this.x, this.y + 50);
 	}
