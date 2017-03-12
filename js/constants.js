@@ -5,7 +5,14 @@ var GameBoard = (function () {
 	var destinationCenter = entityCenter - cellHeight;
 	var boardWidth = cellWidth * horizonCells;
 	var boardHeight = 606; // fixed height, calculated by those 101*171 pngs
-	
+
+	var column = function (x) {
+		return cellWidth * (x - 1);
+	};
+	var row = function (x) {
+		return entityCenter + cellHeight * (x - 1)
+	};
+
 	return {
 		cellWidth: cellWidth,
 		cellHeight: cellHeight,
@@ -15,7 +22,10 @@ var GameBoard = (function () {
 		boardWidth: boardWidth,
 		boardHeight: boardHeight,
 		horizonCells: horizonCells,
-		verticalCells: verticalCells
+		verticalCells: verticalCells,
+		
+		row: row,
+		column: column
 	}
 })();
 
