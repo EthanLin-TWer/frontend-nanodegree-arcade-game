@@ -93,9 +93,9 @@ Player.prototype.checkWins = function () {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy(20, 58, 50), new Enemy(200, 58, 200),
-	new Enemy(303, 58 + 83, 75), new Enemy(20, 58 + 83, 8000),
-	new Enemy(200, 58 + 83 * 2, 290), new Enemy(2, 58 + 83 * 2, 50)];
+var allEnemies = [new Enemy(20, 58, Speed.EXTREMELY_SLOW), new Enemy(200, 58, Speed.SLOW),
+	new Enemy(303, 58 + 83, Speed.EXTREMELY_SLOW), new Enemy(20, 58 + 83, Speed.EXTREMELY_FAST),
+	new Enemy(200, 58 + 83 * 2, Speed.NORMAL), new Enemy(2, 58 + 83 * 2, Speed.EXTREMELY_SLOW)];
 var player = new Player(202, 307);
 
 // This listens for key presses and sends the keys to your
