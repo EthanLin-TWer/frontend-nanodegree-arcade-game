@@ -10,9 +10,7 @@ var Player = function (x, y) {
 };
 utils.inherits(Player, Movable);
 
-Player.prototype.update = function (dt) {
-	this.checkWins()
-};
+Player.prototype.update = function (dt) { };
 
 Player.prototype.handleInput = function (movement) {
 	var cellWidth = GameBoard.cellWidth;
@@ -34,7 +32,7 @@ Player.prototype.handleInput = function (movement) {
 
 Player.prototype.checkWins = function () {
 	if (this.y === GameBoard.destinationCenter) {
-		ctx.drawImage(Resources.get(this.stars), this.x, this.y + 50);
+		ctx.drawImage(Resources.get(this.stars), this.x, this.y - 25);
 	}
 };
 
