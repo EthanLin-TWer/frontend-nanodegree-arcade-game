@@ -22,9 +22,9 @@ Enemy.prototype.update = function (dt) {
    if (this.x > GameBoard.boardWidth) {
       this.move(-GameBoard.boardWidth, 0);
    }
-}
+};
 
 Enemy.prototype.checkCollision = function (object) {
    if (object.y !== this.y) return false;
    return Math.abs(object.x - this.x) <= GameBoard.collisionRadius;
-}
+};

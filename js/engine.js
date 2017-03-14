@@ -100,17 +100,17 @@ var Engine = (function (global) {
 
    function checkCollisions() {
       var collisionHappened = allEnemies.some(function (enemy) {
-         return enemy.checkCollision(player)
-      })
+         return enemy.checkCollision(player);
+      });
 
       if (collisionHappened) {
          console.log('collision!')
-         player = new Player(202, 307)
+         player = new Player(202, 307);
       }
    }
 
    function checkWins() {
-      player.checkWins()
+      player.checkWins();
    }
 
    /* This function initially draws the "game level", it will then call

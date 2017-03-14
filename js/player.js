@@ -10,7 +10,7 @@ var Player = function (x, y) {
 }
 utils.inherits(Player, Movable);
 
-Player.prototype.update = function (dt) { }
+Player.prototype.update = function (dt) { };
 
 Player.prototype.handleInput = function (movement) {
    var cellWidth = GameBoard.cellWidth;
@@ -34,7 +34,7 @@ Player.prototype.checkWins = function () {
    if (this.y === GameBoard.destinationCenter) {
       ctx.drawImage(Resources.get(this.stars), this.x, this.y - 25);
    }
-}
+};
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
