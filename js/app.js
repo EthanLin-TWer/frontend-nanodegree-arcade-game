@@ -6,7 +6,7 @@ var randomPositionInRow = function () {
    return Math.floor(Math.random() * boardWidth);
 };
 
-var player = new Player(GameBoard.column(3), GameBoard.row(4));
+var player = Player.initialPosition()
 var allEnemies = [
    new Enemy(randomPositionInRow(), GameBoard.row(1), Speed.FAST),
    new Enemy(randomPositionInRow(), GameBoard.row(1), Speed.VERY_FAST),
