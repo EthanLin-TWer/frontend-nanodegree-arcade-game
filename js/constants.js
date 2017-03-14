@@ -12,27 +12,28 @@ var GameBoard = (function () {
 
    var column = function (x) {
       return cellWidth * (x - 1);
-   }
+   };
 
    var row = function (x) {
       return entityCenter + cellHeight * (x - 1)
-   }
+   };
 
    var exceedsLeftBoundary = function (x) {
       return x < 0
-   }
+   };
 
    var exceedsRightBoundary = function (x) {
       return x >= boardWidth
-   }
+   };
 
    var exceedsTopBoundary = function (y) {
       return y < destinationCenter
-   }
+   };
 
    var exceedsBottomBoundary = function (y) {
       return y >= entityCenter + cellHeight * (verticalCells - 1)
-   }
+   };
+
    return {
       cellWidth: cellWidth,
       cellHeight: cellHeight,
