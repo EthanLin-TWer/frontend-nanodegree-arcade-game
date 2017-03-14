@@ -7,11 +7,10 @@ var Player = function (x, y) {
    player.stars = 'images/Star.png';
 
    return player;
-};
+}
 utils.inherits(Player, Movable);
 
-Player.prototype.update = function (dt) {
-};
+Player.prototype.update = function (dt) { }
 
 Player.prototype.handleInput = function (movement) {
    var cellWidth = GameBoard.cellWidth;
@@ -29,14 +28,13 @@ Player.prototype.handleInput = function (movement) {
    if (movement === 'down' && !GameBoard.exceedsBottomBoundary(this.y + cellHeight)) {
       this.move(0, cellHeight);
    }
-};
+}
 
 Player.prototype.checkWins = function () {
    if (this.y === GameBoard.destinationCenter) {
       ctx.drawImage(Resources.get(this.stars), this.x, this.y - 25);
    }
-};
-
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

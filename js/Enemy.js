@@ -9,7 +9,7 @@ var Enemy = function (x, y, speed) {
    // The image/sprite for our enemies, this uses
    // a helper we've provided to easily load images
    return enemy;
-};
+}
 utils.inherits(Enemy, Movable);
 
 // Update the enemy's position, required method for game
@@ -22,9 +22,9 @@ Enemy.prototype.update = function (dt) {
    if (this.x > GameBoard.boardWidth) {
       this.move(-GameBoard.boardWidth, 0);
    }
-};
+}
 
 Enemy.prototype.checkCollision = function (object) {
    if (object.y !== this.y) return false;
    return Math.abs(object.x - this.x) <= GameBoard.collisionRadius;
-};
+}
