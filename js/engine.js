@@ -104,7 +104,7 @@ var Engine = (function (global) {
       });
 
       if (collisionHappened) {
-         player = new Player(202, 307);
+         player = new Player(GameBoard.column(3), GameBoard.row(4));
       }
    }
 
