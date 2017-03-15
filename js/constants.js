@@ -41,7 +41,7 @@ var GameBoard = (function () {
       DESTINATION_CENTER: destinationCenter,
 
       BOARD_WIDTH: boardWidth,
-      BOARD_WIDTH: boardHeight,
+      BOARD_HEIGHT: boardHeight,
       HORIZON_CELLS: horizonCells,
       VERTICAL_CELLS: verticalCells,
 
