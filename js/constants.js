@@ -35,17 +35,17 @@ var GameBoard = (function () {
    };
 
    return {
-      cellWidth: cellWidth,
-      cellHeight: cellHeight,
-      entityCenter: entityCenter,
-      destinationCenter: destinationCenter,
+      CELL_WIDTH: cellWidth,
+      CELL_HEIGHT: cellHeight,
+      ENTITY_CENTER: entityCenter,
+      DESTINATION_CENTER: destinationCenter,
 
-      boardWidth: boardWidth,
-      boardHeight: boardHeight,
-      horizonCells: horizonCells,
-      verticalCells: verticalCells,
+      BOARD_WIDTH: boardWidth,
+      BOARD_WIDTH: boardHeight,
+      HORIZON_CELLS: horizonCells,
+      VERTICAL_CELLS: verticalCells,
 
-      collisionRadius: collisionRadius,
+      COLLISION_RADIUS: collisionRadius,
 
       row: row,
       column: column,

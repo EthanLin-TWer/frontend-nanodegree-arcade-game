@@ -16,8 +16,8 @@ Player.initialPosition = function () {
 Player.prototype.update = function (dt) { };
 
 Player.prototype.handleInput = function (movement) {
-   var cellWidth = GameBoard.cellWidth;
-   var cellHeight = GameBoard.cellHeight;
+   var cellWidth = GameBoard.CELL_WIDTH;
+   var cellHeight = GameBoard.CELL_HEIGHT;
 
    if (movement === 'left' && !GameBoard.exceedsLeftBoundary(this.x - cellWidth)) {
       this.move(-cellWidth, 0);
@@ -34,7 +34,7 @@ Player.prototype.handleInput = function (movement) {
 }
 
 Player.prototype.checkWins = function () {
-   if (this.y === GameBoard.destinationCenter) {
+   if (this.y === GameBoard.DESTINATION_CENTER) {
       ctx.drawImage(Resources.get(this.stars), this.x, this.y - 25);
    }
 };

@@ -19,12 +19,12 @@ Enemy.prototype.update = function (dt) {
    // which will ensure the game runs at the same speed for
    // all computers.
    this.move(dt * this.speed, 0);
-   if (this.x > GameBoard.boardWidth) {
-      this.move(-GameBoard.boardWidth, 0);
+   if (this.x > GameBoard.BOARD_WIDTH) {
+      this.move(-GameBoard.BOARD_WIDTH, 0);
    }
 };
 
 Enemy.prototype.checkCollision = function (object) {
    if (object.y !== this.y) return false;
-   return Math.abs(object.x - this.x) <= GameBoard.collisionRadius;
+   return Math.abs(object.x - this.x) <= GameBoard.COLLISION_RADIUS;
 };
