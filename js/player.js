@@ -7,7 +7,7 @@ var Player = function (x, y) {
    player.stars = 'images/Star.png';
 
    return player;
-}
+};
 utils.inherits(Player, Movable);
 
 Player.initialPosition = function () {
@@ -31,7 +31,7 @@ Player.prototype.handleInput = function (movement) {
    if (movement === 'down' && !GameBoard.exceedsBottomBoundary(this.y + cellHeight)) {
       this.move(0, cellHeight);
    }
-}
+};
 
 Player.prototype.checkWins = function () {
    if (this.y === GameBoard.DESTINATION_CENTER) {

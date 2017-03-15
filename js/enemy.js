@@ -9,7 +9,7 @@ var Enemy = function (x, y, speed) {
    // The image/sprite for our enemies, this uses
    // a helper we've provided to easily load images
    return enemy;
-}
+};
 utils.inherits(Enemy, Movable);
 
 // Update the enemy's position, required method for game

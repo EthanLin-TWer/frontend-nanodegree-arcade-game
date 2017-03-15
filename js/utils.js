@@ -9,5 +9,5 @@ var utils = (function () {
 
    return {
       inherits: declareInheritance
-   }
+   };
 })();

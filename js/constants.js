@@ -54,7 +54,7 @@ var GameBoard = (function () {
       exceedsRightBoundary: exceedsRightBoundary,
       exceedsTopBoundary: exceedsTopBoundary,
       exceedsBottomBoundary: exceedsBottomBoundary
-   }
+   };
 })();
 
 

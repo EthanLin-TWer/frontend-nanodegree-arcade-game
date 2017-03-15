@@ -4,12 +4,12 @@ var Movable = function (x, y, sprite) {
    this.sprite = sprite;
 
    return this;
-}
+};
 
 Movable.prototype.move = function (dx, dy) {
    this.x += dx;
    this.y += dy;
-}
+};
 
 // Draw an movable object on the screen, required method for game
 Movable.prototype.render = function () {
