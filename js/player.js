@@ -35,7 +35,7 @@ Player.prototype.handleInput = function (movement) {
 
 Player.prototype.checkWins = function () {
    if (this.y === GameBoard.DESTINATION_CENTER) {
-      ctx.drawImage(Resources.get(this.stars), this.x, this.y - 25);
+      player = Player.initialPosition();
    }
 };
 
