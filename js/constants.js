@@ -1,21 +1,21 @@
 var GameBoard = (function () {
-   var cellWidth = 101, horizonCells = 5;
-   var cellHeight = 83, verticalCells = 6;
-   var entityCenter = 58;
-   var destinationCenter = entityCenter - cellHeight;
-   var boardWidth = cellWidth * horizonCells;
-   var boardHeight = 606; // fixed height, calculated by those 101*171 pngs
+   var CELL_WIDTH = 101, HORIZON_CELLS = 5;
+   var CELL_HEIGHT = 83, VERTICAL_CELLS = 6;
+   var ENTITY_CENTER = 58;
+   var DESTINATION_CENTER = ENTITY_CENTER - CELL_HEIGHT;
+   var BOARD_WIDTH = CELL_WIDTH * HORIZON_CELLS;
+   var BOARD_HEIGHT = 606; // fixed height, calculated by those 101*171 pngs
 
    // the smaller the collision radius, the closer you can be with an enemy
    // without being judged as 'collision' and die
-   var collisionRadius = 12;
+   var COLLISION_RADIUS = 12;
 
    var column = function (x) {
-      return cellWidth * (x - 1);
+      return CELL_WIDTH * (x - 1);
    };
 
    var row = function (x) {
-      return entityCenter + cellHeight * (x - 1);
+      return ENTITY_CENTER + CELL_HEIGHT * (x - 1);
    };
 
    var exceedsLeftBoundary = function (x) {
@@ -23,29 +23,29 @@ var GameBoard = (function () {
    };
 
    var exceedsRightBoundary = function (x) {
-      return x >= boardWidth;
+      return x >= BOARD_WIDTH;
    };
 
    var exceedsTopBoundary = function (y) {
-      return y < destinationCenter;
+      return y < DESTINATION_CENTER;
    };
 
    var exceedsBottomBoundary = function (y) {
-      return y >= entityCenter + cellHeight * (verticalCells - 1);
+      return y >= ENTITY_CENTER + CELL_HEIGHT * (VERTICAL_CELLS - 1);
    };
 
    return {
-      CELL_WIDTH: cellWidth,
-      CELL_HEIGHT: cellHeight,
-      ENTITY_CENTER: entityCenter,
-      DESTINATION_CENTER: destinationCenter,
+      CELL_WIDTH: CELL_WIDTH,
+      CELL_HEIGHT: CELL_HEIGHT,
+      ENTITY_CENTER: ENTITY_CENTER,
+      DESTINATION_CENTER: DESTINATION_CENTER,
 
-      BOARD_WIDTH: boardWidth,
-      BOARD_HEIGHT: boardHeight,
-      HORIZON_CELLS: horizonCells,
-      VERTICAL_CELLS: verticalCells,
+      BOARD_WIDTH: BOARD_WIDTH,
+      BOARD_HEIGHT: BOARD_HEIGHT,
+      HORIZON_CELLS: HORIZON_CELLS,
+      VERTICAL_CELLS: VERTICAL_CELLS,
 
-      COLLISION_RADIUS: collisionRadius,
+      COLLISION_RADIUS: COLLISION_RADIUS,
 
       row: row,
       column: column,
