@@ -12,7 +12,7 @@ utils.inherits(Player, Movable);
 
 Player.initialPosition = function () {
    return new Player(GameBoard.column(3), GameBoard.row(4));
-}
+};
 Player.prototype.update = function (dt) { };
 
 Player.prototype.handleInput = function (movement) {
