@@ -59,11 +59,11 @@ var GameBoard = (function () {
 
 
 var Speed = {
-   'EXTREMELY_SLOW': 100,
-   'VERY_SLOW': 150,
-   'SLOW': 200,
-   'NORMAL': 350,
-   'FAST': 500,
-   'VERY_FAST': 700,
-   'EXTREMELY_FAST': 1000
+   EXTREMELY_SLOW: 100,
+   VERY_SLOW: 150,
+   SLOW: 200,
+   NORMAL: 350,
+   FAST: 500,
+   VERY_FAST: 700,
+   EXTREMELY_FAST: 1000
 };
