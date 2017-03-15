@@ -1,2 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+
+# NPM
+node_modules
+npm-debug.log

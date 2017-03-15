@@ -1,0 +1,28 @@
+{
+  "name": "frontend-nanodegree-arcade-game",
+  "version": "1.0.0",
+  "description": "## What's This? 这是什么项目？",
+  "main": "index.html",
+  "scripts": {
+    "lint": "eslint js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game.git"
+  },
+  "keywords": [
+    "frontend",
+    "nanodegree",
+    "arcade",
+    "game"
+  ],
+  "author": "Linesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game/issues"
+  },
+  "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1"
+  }
+}
