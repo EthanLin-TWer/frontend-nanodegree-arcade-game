@@ -1,4 +1,4 @@
-# frontend-nanodegree-arcade-game
+# frontend-nanodegree-arcade-game [![][Badges: Travis CI]][Links: Travis CI]
 
 ## What's This? 这是什么项目？
 
@@ -38,3 +38,5 @@ This requires a globally installed npm. 这需要你先安装了一个全局的 
 
 [Game Rubric/Specification]: https://review.udacity.com/#!/projects/2696458597/rubric
 [Startup Guide]: https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true
+[Badges: Travis CI]: https://travis-ci.org/linesh-simplicity/frontend-nanodegree-arcade-game.svg?branch=master
+[Links: Travis CI]: https://travis-ci.org/linesh-simplicity/frontend-nanodegree-arcade-game
