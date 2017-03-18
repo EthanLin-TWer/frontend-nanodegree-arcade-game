@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 script:
-  - npm lint
+  - npm run lint
   - npm test
 cache:
   yarn: true
