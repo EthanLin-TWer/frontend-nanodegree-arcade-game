@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "lint": "eslint js/*.js",
+    "buildDev": "watchify js/*.js -o dist/bundle.js -t babelify",
     "test": "mocha test/ --recursive --compilers js:babel-core/register"
   },
   "repository": {
