@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game#readme",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "eslint": "^3.18.0"
   }
 }
