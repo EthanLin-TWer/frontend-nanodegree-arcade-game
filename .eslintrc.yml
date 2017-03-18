@@ -16,5 +16,10 @@ rules:
     - error
     - single
   semi:
-    - error
+    - warn
     - never
+  # TURN ON these two checks when development begins
+  no-unused-vars:
+    - warn
+  no-undef:
+    - warn
