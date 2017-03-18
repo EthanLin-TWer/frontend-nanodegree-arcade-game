@@ -4,6 +4,7 @@
   "description": "frontend-nanodegree-arcade-game ===============================",
   "main": "index.html",
   "scripts": {
+    "lint": "eslint js/*.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
