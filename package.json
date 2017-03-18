@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game/issues"
   },
-  "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game#readme"
+  "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game#readme",
+  "devDependencies": {
+    "eslint": "^3.18.0"
+  }
 }
