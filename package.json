@@ -1,7 +1,7 @@
 {
   "name": "frontend-nanodegree-arcade-game",
   "version": "1.0.0",
-  "description": "frontend-nanodegree-arcade-game ===============================",
+  "description": "frontend-nanodegree-arcade-game",
   "main": "index.html",
   "scripts": {
     "lint": "eslint js/*.js",
