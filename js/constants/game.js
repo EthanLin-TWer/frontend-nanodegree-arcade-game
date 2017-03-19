@@ -18,9 +18,11 @@ export class Game {
    static col(x) {
       return this.CELL_WIDTH * (x - 1)
    }
+
    static withinLeftBoundary(x) {
       return x > Game.col(1)
    }
+
    static withinRightBoundary(x) {
       return x < Game.col(Game.HORIZON_CELLS)
    }
