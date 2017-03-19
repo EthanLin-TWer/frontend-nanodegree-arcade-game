@@ -41,4 +41,12 @@ describe('game enemy', () => {
       let collides = enemy.checkCollision(player)
       expect(collides).to.be.false
    })
+
+   it('should collide when player mets enemy in the same position', () => {
+      let enemy = new Enemy(Game.col(2), Game.row(2), Speed.FAST)
+      let player = new Player(Game.col(2), Game.row(2))
+
+      let collides = enemy.checkCollision(player)
+      expect(collides).to.be.true
+   })
 })

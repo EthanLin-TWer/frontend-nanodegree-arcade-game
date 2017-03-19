@@ -17,7 +17,9 @@ export class Enemy {
    }
 
    checkCollision(player) {
-      return false
+      if (player.y !== this.y) return false
+
+      return player.x === this.x
    }
 }
 
