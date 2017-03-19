@@ -7,7 +7,7 @@ describe('game player', () => {
       let player = new Player(202, 83 * 3 + 55)
       player.handleInput('left')
 
-      expect(player.x).to.equal(101)
+      expect(player.x).to.equal(202 - 101)
       expect(player.y).to.equal(83 * 3 + 55)
    })
 })
