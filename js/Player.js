@@ -25,9 +25,9 @@ export class Player {
       } else if (movement === 'right') {
          this.x += Game.CELL_WIDTH
       } else if (movement === 'up') {
-         this.y -= 83
+         this.y -= Game.CELL_HEIGHT
       } else if (movement === 'down') {
-         this.y += 83
+         this.y += Game.CELL_HEIGHT
       }
 
       return this
