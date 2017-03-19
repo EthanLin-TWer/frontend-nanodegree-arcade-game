@@ -15,8 +15,9 @@
  */
 
 import Resources from './resources'
+import { Game } from './constants'
 import { allEnemies } from './Enemy'
-import { player } from './Player'
+import { Player } from './Player'
 
 var Engine = (function (global) {
    /* Predefine the variables we'll be using within this scope,
@@ -28,6 +29,7 @@ var Engine = (function (global) {
       canvas = doc.createElement('canvas'),
       ctx = canvas.getContext('2d'),
       lastTime;
+   let player;
 
    canvas.width = 505;
    canvas.height = 606;
@@ -84,7 +86,14 @@ var Engine = (function (global) {
     */
    function update(dt) {
       updateEntities(dt);
-      // checkCollisions();
+      checkCollisions();
+   }
+
+   function checkCollisions() {
+      let collides = allEnemies.some(enemy => enemy.checkCollision(player))
+      if (collides) {
+         player = new Player(Game.col(3), Game.row(5))
+      }
    }
 
    /* This is called by the update function and loops through all of the
@@ -163,7 +172,7 @@ var Engine = (function (global) {
     * those sorts of things. It's only called once by the init() method.
     */
    function reset() {
-      // noop
+      player = new Player(Game.col(3), Game.row(5))
    }
 
    /* Go ahead and load all of the images we know we're going to need to

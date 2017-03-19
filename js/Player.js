@@ -34,6 +34,3 @@ export class Player {
       return this
    }
 }
-
-
-export let player = new Player(202, 83 * 3 + 55)
