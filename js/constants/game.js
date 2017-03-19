@@ -10,11 +10,19 @@ export class Game {
 
    static BOARD_WIDTH = Game.CELL_WIDTH * Game.HORIZON_CELLS
 
+   static TOP_BOUNDARY = Game.row(0)
+
    static row(y) {
       return this.CELL_HEIGHT * (y - 1) + this.OBJECT_CENTER
    }
    static col(x) {
       return this.CELL_WIDTH * (x - 1)
+   }
+   static withinLeftBoundary(x) {
+      return x > Game.col(1)
+   }
+   static withinRightBoundary(x) {
+      return x < Game.col(Game.HORIZON_CELLS)
    }
 }
 

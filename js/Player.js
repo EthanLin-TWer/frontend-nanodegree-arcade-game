@@ -23,18 +23,18 @@ export class Player extends Movable {
    }
 
    wins() {
-      return this.y === Game.row(0)
+      return this.y === Game.TOP_BOUNDARY
    }
 
    handleInput(movement) {
       switch (movement) {
       case 'left':
-         if (this.x > Game.col(1)) {
+         if (Game.withinLeftBoundary(this.x)) {
             this.move(-Game.CELL_WIDTH, 0)
          }
          break
       case 'right':
-         if (this.x < Game.col(5)) {
+         if (Game.withinRightBoundary(this.x)) {
             this.move(Game.CELL_WIDTH, 0)
          }
          break
@@ -52,4 +52,5 @@ export class Player extends Movable {
 
       return this
    }
+
 }
