@@ -34,7 +34,10 @@ export class Player {
    handleInput(movement) {
       switch (movement) {
       case 'left':
-         this.x -= Game.CELL_WIDTH; break
+         if (this.x > Game.col(1)) {
+            this.x -= Game.CELL_WIDTH
+         }
+         break
       case 'right':
          this.x += Game.CELL_WIDTH; break
       case 'up':
