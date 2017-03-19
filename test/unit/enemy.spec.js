@@ -42,9 +42,17 @@ describe('game enemy', () => {
       expect(collides).to.be.false
    })
 
-   it('should collide when player mets enemy in the same position', () => {
+   it('should collide when player meets enemy in the same position', () => {
       let enemy = new Enemy(Game.col(2), Game.row(2), Speed.FAST)
       let player = new Player(Game.col(2), Game.row(2))
+
+      let collides = enemy.checkCollision(player)
+      expect(collides).to.be.true
+   })
+
+   it('should collide when player is less than 12px closer to the enemy', () => {
+      let enemy = new Enemy(200, Game.row(3), Speed.FAST)
+      let player = new Player(212, Game.row(3))
 
       let collides = enemy.checkCollision(player)
       expect(collides).to.be.true

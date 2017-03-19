@@ -19,7 +19,7 @@ export class Enemy {
    checkCollision(player) {
       if (player.y !== this.y) return false
 
-      return player.x === this.x
+      return Math.abs(player.x - this.x) <= 12
    }
 }
 
