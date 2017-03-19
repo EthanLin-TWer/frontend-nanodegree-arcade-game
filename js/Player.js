@@ -39,7 +39,10 @@ export class Player {
          }
          break
       case 'right':
-         this.x += Game.CELL_WIDTH; break
+         if (this.x < Game.col(5)) {
+            this.x += Game.CELL_WIDTH
+         }
+         break
       case 'up':
          this.y -= Game.CELL_HEIGHT; break
       case 'down':

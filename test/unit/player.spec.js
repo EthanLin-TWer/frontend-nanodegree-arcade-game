@@ -87,12 +87,22 @@ describe('player', () => {
    })
 
    describe('error handling', () => {
-      it('should not move across left boundary', () => {
+      it('should not move out of left boundary', () => {
          player = new Player(Game.col(1), Game.row(3))
 
          let afterMovement = player.handleInput('left')
 
          expect(afterMovement.x).to.equal(Game.col(1))
+         expect(afterMovement.y).to.equal(Game.row(3))
+      })
+
+      it('should not move out of right boundary', () => {
+         player = new Player(Game.col(5), Game.row(3))
+
+         let afterMovement = player.handleInput('right')
+
+         expect(afterMovement.x).to.equal(Game.col(5))
+         expect(afterMovement.y).to.equal(Game.row(3))
       })
    })
 })
