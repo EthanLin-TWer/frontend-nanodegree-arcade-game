@@ -3,3 +3,7 @@
 
 # NPM
 node_modules
+npm-debug.log
+
+# Generated
+dist
