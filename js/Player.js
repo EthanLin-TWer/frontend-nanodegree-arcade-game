@@ -20,14 +20,19 @@ export class Player {
    }
 
    handleInput(movement) {
-      if (movement === 'left') {
+      switch (movement) {
+      case 'left':
          this.x -= Game.CELL_WIDTH
-      } else if (movement === 'right') {
+         break
+      case 'right':
          this.x += Game.CELL_WIDTH
-      } else if (movement === 'up') {
+         break
+      case 'up':
          this.y -= Game.CELL_HEIGHT
-      } else if (movement === 'down') {
+         break
+      case 'down':
          this.y += Game.CELL_HEIGHT
+         break
       }
 
       return this
