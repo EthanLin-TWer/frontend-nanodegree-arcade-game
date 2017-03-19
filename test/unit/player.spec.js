@@ -1,5 +1,6 @@
 import { describe, it, beforeEach } from 'mocha'
 import { expect } from 'chai'
+import Sinon from 'sinon'
 import { Player } from '../../js/Player'
 import { Game } from '../../js/constants'
 
@@ -57,5 +58,15 @@ describe('game player', () => {
       let wins = player.wins()
 
       expect(wins).to.be.false
+   })
+
+   it('should reset player to initial position after player wins', () => {
+      let wins = Sinon.stub(player, 'wins')
+      wins.returns(true)
+
+      player.update()
+
+      expect(player.x).to.equal(Game.col(3))
+      expect(player.y).to.equal(Game.row(5))
    })
 })
