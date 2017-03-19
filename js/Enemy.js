@@ -11,8 +11,8 @@ export class Enemy {
 
    update(dt) {
       this.x += dt * this.speed
-      if (this.x > Game.col(6)) {
-         this.x -= Game.col(6)
+      if (this.x > Game.BOARD_WIDTH) {
+         this.x -= Game.BOARD_WIDTH
       }
    }
 
