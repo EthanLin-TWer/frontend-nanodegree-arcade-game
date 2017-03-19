@@ -24,5 +24,13 @@ export class Game {
    static withinRightBoundary(x) {
       return x < Game.col(Game.HORIZON_CELLS)
    }
+
+   static withinTopBoundary(y) {
+      return y > Game.TOP_BOUNDARY
+   }
+
+   static withinBottomBoundary(y) {
+      return y < Game.row(5)
+   }
 }
 

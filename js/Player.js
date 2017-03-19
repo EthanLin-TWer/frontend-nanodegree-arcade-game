@@ -39,12 +39,12 @@ export class Player extends Movable {
          }
          break
       case 'up':
-         if (this.y > Game.row(0)) {
+         if (Game.withinTopBoundary(this.y)) {
             this.move(0, -Game.CELL_HEIGHT)
          }
          break
       case 'down':
-         if (this.y < Game.row(5)) {
+         if (Game.withinBottomBoundary(this.y)) {
             this.move(0, Game.CELL_HEIGHT)
          }
          break
