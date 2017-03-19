@@ -110,4 +110,4 @@ var Resources = {
    isReady: isReady
 };
 
-export { Resources }
+export default Resources

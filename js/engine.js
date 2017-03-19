@@ -14,7 +14,7 @@
  * a little simpler to work with.
  */
 
-import { Resources } from './resources'
+import Resources from './resources'
 
 var Engine = (function (global) {
    /* Predefine the variables we'll be using within this scope,
