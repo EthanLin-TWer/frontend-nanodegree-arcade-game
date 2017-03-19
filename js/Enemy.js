@@ -1,6 +1,5 @@
 import Resources from './resources'
 
-// Enemies our player must avoid
 export class Enemy {
    constructor(x, y) {
       this.x = x

@@ -15,7 +15,7 @@
  */
 
 import Resources from './resources'
-import { allEnemies } from './app'
+import { allEnemies } from './Enemy'
 import { player } from './Player'
 
 var Engine = (function (global) {
