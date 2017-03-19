@@ -18,7 +18,7 @@ class Player {
       ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }
 
-   handleInput() {
+   handleInput(movement) {
 
    }
 }
@@ -36,4 +36,4 @@ document.addEventListener('keyup', function (e) {
    player.handleInput(allowedKeys[e.keyCode]);
 });
 
-export let player = new Player(1, 1)
+export let player = new Player(202, 83 * 3 + 55)
