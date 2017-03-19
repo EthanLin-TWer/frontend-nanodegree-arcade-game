@@ -24,7 +24,7 @@ var Engine = (function () {
     * create the canvas element, grab the 2D context for that canvas
     * set the canvas elements height/width and add it to the DOM.
     */
-   var doc = window.document,
+   let doc = window.document,
       win = window,
       canvas = doc.createElement('canvas'),
       ctx = canvas.getContext('2d'),
@@ -45,7 +45,7 @@ var Engine = (function () {
        * would be the same for everyone (regardless of how fast their
        * computer is) - hurray time!
        */
-      var now = Date.now(),
+      let now = Date.now(),
          dt = (now - lastTime) / 1000.0
 
       /* Call our update/render functions, pass along the time delta to
@@ -120,7 +120,7 @@ var Engine = (function () {
       /* This array holds the relative URL to the image used
        * for that particular row of the game level.
        */
-      var rowImages = [
+      let rowImages = [
             'images/water-block.png',   // Top row is water
             'images/stone-block.png',   // Row 1 of 3 of stone
             'images/stone-block.png',   // Row 2 of 3 of stone
@@ -129,15 +129,14 @@ var Engine = (function () {
             'images/grass-block.png'    // Row 2 of 2 of grass
          ],
          numRows = Game.VERTICAL_CELLS,
-         numCols = Game.HORIZON_CELLS,
-         row, col
+         numCols = Game.HORIZON_CELLS
 
       /* Loop through the number of rows and columns we've defined above
        * and, using the rowImages array, draw the correct image for that
        * portion of the "grid"
        */
-      for (row = 0; row < numRows; row++) {
-         for (col = 0; col < numCols; col++) {
+      for (let row = 0; row < numRows; row++) {
+         for (let col = 0; col < numCols; col++) {
             /* The drawImage function of the canvas' context element
              * requires 3 parameters: the image to draw, the x coordinate
              * to start drawing and the y coordinate to start drawing.
@@ -197,7 +196,7 @@ var Engine = (function () {
    // This listens for key presses and sends the keys to your
    // Player.handleInput() method. You don't need to modify this.
    document.addEventListener('keyup', function (e) {
-      var allowedKeys = {
+      let allowedKeys = {
          37: 'left',
          38: 'up',
          39: 'right',

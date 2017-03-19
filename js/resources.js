@@ -4,9 +4,9 @@
  * a simple "caching" layer so it will reuse cached images if you attempt
  * to load the same image multiple times.
  */
-var resourceCache = {}
-var loading = []
-var readyCallbacks = []
+let resourceCache = {}
+let loading = []
+let readyCallbacks = []
 
 /* This is the publicly accessible image loading function. It accepts
  * an array of strings pointing to image files or a string for a single
@@ -44,7 +44,7 @@ function _load(url) {
       /* This URL has not been previously loaded and is not present
        * within our cache; we'll need to load this image.
        */
-      var img = new Image()
+      let img = new Image()
       img.onload = function () {
          /* Once our image has properly loaded, add it to our cache
           * so that we can simply return this image if the developer
@@ -83,8 +83,8 @@ function get(url) {
  * for loading have in fact been properly loaded.
  */
 function isReady() {
-   var ready = true
-   for (var k in resourceCache) {
+   let ready = true
+   for (let k in resourceCache) {
       if (resourceCache.hasOwnProperty(k) &&
          !resourceCache[k]) {
          ready = false
@@ -103,7 +103,7 @@ function onReady(func) {
 /* This object defines the publicly accessible functions available to
  * developers by creating a global Resources object.
  */
-var Resources = {
+let Resources = {
    load: load,
    get: get,
    onReady: onReady,
