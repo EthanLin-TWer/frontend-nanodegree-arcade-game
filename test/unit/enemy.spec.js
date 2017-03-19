@@ -33,4 +33,12 @@ describe('game enemy', () => {
       let collides = enemy.checkCollision(player)
       expect(collides).to.be.false
    })
+
+   it('should not collide when player isn\'t close enough', () => {
+      let enemy = new Enemy(Game.col(2), Game.row(2), Speed.FAST)
+      let player = new Player(Game.col(1), Game.row(2))
+
+      let collides = enemy.checkCollision(player)
+      expect(collides).to.be.false
+   })
 })
