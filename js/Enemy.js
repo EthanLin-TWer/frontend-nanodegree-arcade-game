@@ -1,5 +1,5 @@
 import Resources from './resources'
-import { Game } from './constants'
+import { Game, Speed } from './constants'
 
 export class Enemy {
    constructor(x, y, speed) {
@@ -25,5 +25,10 @@ export class Enemy {
 }
 
 export const allEnemies = [
-   // new Enemy(Game.col(2), Game.row(1), Speed.FAST)
+   new Enemy(Game.col(2), Game.row(1), Speed.EXTREMELY_FAST),
+   new Enemy(Game.col(3), Game.row(2), Speed.FAST),
+   new Enemy(Game.col(1), Game.row(2), Speed.VERY_FAST),
+   new Enemy(Game.col(2), Game.row(3), Speed.SLOW),
+   new Enemy(Game.col(3), Game.row(3), Speed.EXTREMELY_SLOW),
+   new Enemy(Game.col(1), Game.row(3), Speed.NORMAL),
 ]
