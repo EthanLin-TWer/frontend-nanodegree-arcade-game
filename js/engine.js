@@ -15,11 +15,10 @@
  */
 
 import Resources from './resources'
-import { Game } from './constants'
 import { allEnemies } from './Enemy'
 import { Player } from './Player'
 
-var Engine = (function (global) {
+var Engine = (function () {
    /* Predefine the variables we'll be using within this scope,
     * create the canvas element, grab the 2D context for that canvas
     * set the canvas elements height/width and add it to the DOM.
@@ -28,12 +27,12 @@ var Engine = (function (global) {
       win = window,
       canvas = doc.createElement('canvas'),
       ctx = canvas.getContext('2d'),
-      lastTime;
-   let player;
+      lastTime
+   let player
 
-   canvas.width = 505;
-   canvas.height = 606;
-   doc.body.appendChild(canvas);
+   canvas.width = 505
+   canvas.height = 606
+   doc.body.appendChild(canvas)
 
    /* This function serves as the kickoff point for the game loop itself
     * and handles properly calling the update and render methods.
@@ -46,23 +45,23 @@ var Engine = (function (global) {
        * computer is) - hurray time!
        */
       var now = Date.now(),
-         dt = (now - lastTime) / 1000.0;
+         dt = (now - lastTime) / 1000.0
 
       /* Call our update/render functions, pass along the time delta to
        * our update function since it may be used for smooth animation.
        */
-      update(dt);
-      render();
+      update(dt)
+      render()
 
       /* Set our lastTime variable which is used to determine the time delta
        * for the next time this function is called.
        */
-      lastTime = now;
+      lastTime = now
 
       /* Use the browser's requestAnimationFrame function to call this
        * function again as soon as the browser is able to draw another frame.
        */
-      win.requestAnimationFrame(main);
+      win.requestAnimationFrame(main)
    }
 
    /* This function does some initial setup that should only occur once,
@@ -70,9 +69,9 @@ var Engine = (function (global) {
     * game loop.
     */
    function init() {
-      reset();
-      lastTime = Date.now();
-      main();
+      reset()
+      lastTime = Date.now()
+      main()
    }
 
    /* This function is called by main (our game loop) and itself calls all
@@ -85,8 +84,8 @@ var Engine = (function (global) {
     * on the entities themselves within your app.js file).
     */
    function update(dt) {
-      updateEntities(dt);
-      checkCollisions();
+      updateEntities(dt)
+      checkCollisions()
    }
 
    function checkCollisions() {
@@ -105,9 +104,9 @@ var Engine = (function (global) {
     */
    function updateEntities(dt) {
       allEnemies.forEach(function (enemy) {
-         enemy.update(dt);
-      });
-      player.update();
+         enemy.update(dt)
+      })
+      player.update()
    }
 
    /* This function initially draws the "game level", it will then call
@@ -130,7 +129,7 @@ var Engine = (function (global) {
          ],
          numRows = 6,
          numCols = 5,
-         row, col;
+         row, col
 
       /* Loop through the number of rows and columns we've defined above
        * and, using the rowImages array, draw the correct image for that
@@ -145,11 +144,11 @@ var Engine = (function (global) {
              * so that we get the benefits of caching these images, since
              * we're using them over and over.
              */
-            ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+            ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83)
          }
       }
 
-      renderEntities();
+      renderEntities()
    }
 
    /* This function is called by the render function and is called on each game
@@ -161,10 +160,10 @@ var Engine = (function (global) {
        * the render function you have defined.
        */
       allEnemies.forEach(function (enemy) {
-         enemy.render();
-      });
+         enemy.render()
+      })
 
-      player.render();
+      player.render()
    }
 
    /* This function does nothing but it could have been a good place to
@@ -185,14 +184,14 @@ var Engine = (function (global) {
       'images/grass-block.png',
       'images/enemy-bug.png',
       'images/char-boy.png'
-   ]);
-   Resources.onReady(init);
+   ])
+   Resources.onReady(init)
 
    /* Assign the canvas' context object to the global variable (the window
     * object when run in a browser) so that developers can use it more easily
     * from within their app.js files.
     */
-   window.ctx = ctx;
+   window.ctx = ctx
 
    // This listens for key presses and sends the keys to your
    // Player.handleInput() method. You don't need to modify this.
@@ -202,8 +201,8 @@ var Engine = (function (global) {
          38: 'up',
          39: 'right',
          40: 'down'
-      };
+      }
 
-      player.handleInput(allowedKeys[e.keyCode]);
-   });
-})(this);
+      player.handleInput(allowedKeys[e.keyCode])
+   })
+})()
