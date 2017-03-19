@@ -18,4 +18,11 @@ describe('game enemy', () => {
 
       expect(enemy.speed).to.equal(Speed.VERY_FAST)
    })
+
+   it('should be able to move very slow', () => {
+      let enemy = new Enemy(Game.col(1), Game.row(2), Speed.VERY_SLOW)
+      enemy.update(1)
+
+      expect(enemy.speed).to.equal(Speed.VERY_SLOW)
+   })
 })
