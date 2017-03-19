@@ -26,6 +26,8 @@ export class Player {
          this.x += Game.CELL_WIDTH
       } else if (movement === 'up') {
          this.y -= 83
+      } else if (movement === 'down') {
+         this.y += 83
       }
 
       return this

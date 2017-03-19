@@ -24,10 +24,17 @@ describe('game player', () => {
       expect(y).to.equal(83 * 2 + 55)
    })
 
-   it('should be able to move forward', () => {
+   it('should be able to move up', () => {
       let { x, y } = player.handleInput('up')
 
       expect(x).to.equal(202)
       expect(y).to.equal(83 * 1 + 55)
+   })
+
+   it('should be able to move down', () => {
+      let { x, y } = player.handleInput('down');
+
+      expect(x).to.equal(202)
+      expect(y).to.equal(83 * 3 + 55)
    })
 })
