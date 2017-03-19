@@ -17,8 +17,9 @@ export class Player {
 
    update() {
       if (this.wins()) {
-         this.x = 202
-         this.y = 83 * 3 + 55
+         let { x, y } = Player.initialPosition()
+         this.x = x
+         this.y = y
       }
    }
 
