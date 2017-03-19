@@ -57,4 +57,12 @@ describe('game enemy', () => {
       let collides = enemy.checkCollision(player)
       expect(collides).to.be.true
    })
+
+   it('should collide when player is more than 13px far away from the enemy', () => {
+      let enemy = new Enemy(187, Game.row(3), Speed.FAST)
+      let player = new Player(200, Game.row(3))
+
+      let collides = enemy.checkCollision(player)
+      expect(collides).to.be.false
+   })
 })
