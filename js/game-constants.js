@@ -1,4 +1,9 @@
-export const Game = {
-   CELL_WIDTH: 101,
-   CELL_HEIGHT: 83
+export class Game {
+   static CELL_WIDTH = 101
+   static CELL_HEIGHT = 83
+
+   static col(y) {
+      return this.CELL_HEIGHT * (y - 1) + 55
+   }
 }
+
