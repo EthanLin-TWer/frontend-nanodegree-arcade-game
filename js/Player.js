@@ -20,7 +20,7 @@ export class Player {
 
    handleInput(movement) {
       if (movement === 'left') {
-         this.x = 101
+         this.x -= 101
       }
    }
 }
