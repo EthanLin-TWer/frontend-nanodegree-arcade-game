@@ -8,7 +8,7 @@ export class Enemy {
    }
 
    update(dt) {
-
+      this.x += dt * 1000
    }
 
    render() {
