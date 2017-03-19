@@ -15,6 +15,7 @@
  */
 
 import Resources from './resources'
+import { Game } from './constants'
 import { allEnemies } from './Enemy'
 import { Player } from './Player'
 
@@ -30,7 +31,7 @@ var Engine = (function () {
       lastTime
    let player
 
-   canvas.width = 505
+   canvas.width = Game.BOARD_WIDTH
    canvas.height = 606
    doc.body.appendChild(canvas)
 
@@ -127,8 +128,8 @@ var Engine = (function () {
             'images/grass-block.png',   // Row 1 of 2 of grass
             'images/grass-block.png'    // Row 2 of 2 of grass
          ],
-         numRows = 6,
-         numCols = 5,
+         numRows = Game.VERTICAL_CELLS,
+         numCols = Game.HORIZON_CELLS,
          row, col
 
       /* Loop through the number of rows and columns we've defined above
@@ -144,7 +145,7 @@ var Engine = (function () {
              * so that we get the benefits of caching these images, since
              * we're using them over and over.
              */
-            ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83)
+            ctx.drawImage(Resources.get(rowImages[row]), col * Game.CELL_WIDTH, row * Game.CELL_HEIGHT)
          }
       }
 
