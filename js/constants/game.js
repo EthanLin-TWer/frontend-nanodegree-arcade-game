@@ -30,7 +30,7 @@ export class Game {
    }
 
    static withinBottomBoundary(y) {
-      return y < Game.row(5)
+      return y < Game.row(Game.VERTICAL_CELLS - 1)
    }
 }
 
