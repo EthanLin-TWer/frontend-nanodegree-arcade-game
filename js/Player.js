@@ -22,17 +22,13 @@ export class Player {
    handleInput(movement) {
       switch (movement) {
       case 'left':
-         this.x -= Game.CELL_WIDTH
-         break
+         this.x -= Game.CELL_WIDTH; break
       case 'right':
-         this.x += Game.CELL_WIDTH
-         break
+         this.x += Game.CELL_WIDTH; break
       case 'up':
-         this.y -= Game.CELL_HEIGHT
-         break
+         this.y -= Game.CELL_HEIGHT; break
       case 'down':
-         this.y += Game.CELL_HEIGHT
-         break
+         this.y += Game.CELL_HEIGHT; break
       }
 
       return this
