@@ -15,6 +15,7 @@
  */
 
 import Resources from './resources'
+import { allEnemies, player } from './app'
 
 var Engine = (function (global) {
    /* Predefine the variables we'll be using within this scope,

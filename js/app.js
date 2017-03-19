@@ -1,3 +1,5 @@
+import Resources from './resources'
+
 // Enemies our player must avoid
 var Enemy = function () {
    // Variables applied to each of our instances go here,
@@ -24,7 +26,21 @@ Enemy.prototype.render = function () {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function () {
 
+}
+
+Player.prototype.update = function () {
+
+}
+
+Player.prototype.handleInput = function(movement) {
+
+}
+
+Player.prototype.render = function() {
+
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -43,3 +59,6 @@ document.addEventListener('keyup', function (e) {
 
    player.handleInput(allowedKeys[e.keyCode]);
 });
+
+export const allEnemies = [new Enemy()]
+export let player = new Player()
