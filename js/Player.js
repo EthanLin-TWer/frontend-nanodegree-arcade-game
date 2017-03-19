@@ -1,5 +1,5 @@
-import { Game } from "./constants";
-import { Movable } from "./Movable";
+import { Game } from './constants'
+import { Movable } from './Movable'
 
 // Now write your own player class
 // This class requires an update(), render() and
