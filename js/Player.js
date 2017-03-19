@@ -30,22 +30,22 @@ export class Player extends Movable {
       switch (movement) {
       case 'left':
          if (this.x > Game.col(1)) {
-            this.x -= Game.CELL_WIDTH
+            this.move(-Game.CELL_WIDTH, 0)
          }
          break
       case 'right':
          if (this.x < Game.col(5)) {
-            this.x += Game.CELL_WIDTH
+            this.move(Game.CELL_WIDTH, 0)
          }
          break
       case 'up':
          if (this.y > Game.row(0)) {
-            this.y -= Game.CELL_HEIGHT
+            this.move(0, -Game.CELL_HEIGHT)
          }
          break
       case 'down':
          if (this.y < Game.row(5)) {
-            this.y += Game.CELL_HEIGHT
+            this.move(0, Game.CELL_HEIGHT)
          }
          break
       }
