@@ -7,6 +7,11 @@ export class Movable {
       this.sprite = sprite
    }
 
+   move(dx, dy) {
+      this.x += dx
+      this.y += dy
+   }
+
    render() {
       ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }

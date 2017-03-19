@@ -8,9 +8,10 @@ export class Enemy extends Movable {
    }
 
    update(dt) {
-      this.x += dt * this.speed
+      this.move(dt * this.speed, 0)
+
       if (this.x > Game.BOARD_WIDTH) {
-         this.x -= Game.BOARD_WIDTH
+         this.move(-Game.BOARD_WIDTH, 0)
       }
    }
 
