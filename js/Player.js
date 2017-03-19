@@ -1,4 +1,5 @@
 import Resources from './resources'
+import { Game } from './game-constants'
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -20,7 +21,9 @@ export class Player {
 
    handleInput(movement) {
       if (movement === 'left') {
-         this.x -= 101
+         this.x -= Game.CELL_WIDTH
+      } else {
+         this.x += Game.CELL_WIDTH
       }
    }
 }
