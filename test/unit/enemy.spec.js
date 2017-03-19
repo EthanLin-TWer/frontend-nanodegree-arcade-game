@@ -6,7 +6,7 @@ import { Player } from '../../js/Player'
 
 describe('enemy', () => {
 
-   describe('move functionality', () => {
+   describe('move functionalities', () => {
       it('should be able to move', () => {
          let enemy = new Enemy(Game.col(1), Game.row(2), Speed.NORMAL)
          enemy.update(1)
@@ -26,6 +26,15 @@ describe('enemy', () => {
          enemy.update(1)
 
          expect(enemy.speed).to.equal(Speed.VERY_SLOW)
+      })
+
+      it('should cross the screen when disappear in the right boundary', () => {
+         let enemy = new Enemy(Game.col(5), Game.row(2), Speed.NORMAL)
+
+         enemy.update(1)
+
+         expect(enemy.speed).to.equal(400)
+         expect(enemy.x).to.equal(Math.abs(Game.col(6) - Game.col(5) - 400))
       })
    })
 
