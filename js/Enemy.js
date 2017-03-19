@@ -15,6 +15,10 @@ export class Enemy {
    render() {
       ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }
+
+   checkCollision(player) {
+      return false
+   }
 }
 
 export const allEnemies = [
