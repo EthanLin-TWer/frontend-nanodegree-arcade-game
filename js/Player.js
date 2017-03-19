@@ -22,9 +22,13 @@ export class Player {
    handleInput(movement) {
       if (movement === 'left') {
          this.x -= Game.CELL_WIDTH
-      } else {
+      } else if (movement === 'right') {
          this.x += Game.CELL_WIDTH
+      } else if (movement === 'up') {
+         this.y -= 83
       }
+
+      return this
    }
 }
 

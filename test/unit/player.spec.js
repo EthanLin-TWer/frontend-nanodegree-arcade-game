@@ -11,16 +11,24 @@ describe('game player', () => {
    })
 
    it('should be able to move left', () => {
-      player.handleInput('left')
+      let { x, y } = player.handleInput('left');
 
-      expect(player.x).to.equal(202 - Game.CELL_WIDTH)
-      expect(player.y).to.equal(30)
+      expect(x).to.equal(202 - Game.CELL_WIDTH)
+      expect(y).to.equal(30)
    })
 
    it('should be able to move right', () => {
-      player.handleInput('right')
+      let { x, y } = player.handleInput('right');
 
-      expect(player.x).to.equal(202 + Game.CELL_WIDTH)
-      expect(player.y).to.equal(30)
+      expect(x).to.equal(202 + Game.CELL_WIDTH)
+      expect(y).to.equal(30)
+   })
+
+   it('should be able to move forward', () => {
+      let player = new Player(202, 83 * 2 + 55)
+      let { x, y } = player.handleInput('up')
+
+      expect(x).to.equal(202)
+      expect(y).to.equal(83 * 1 + 55)
    })
 })
