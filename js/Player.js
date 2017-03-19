@@ -26,10 +26,6 @@ export class Player extends Movable {
       return this.y === Game.row(0)
    }
 
-   render() {
-      ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
-   }
-
    handleInput(movement) {
       switch (movement) {
       case 'left':

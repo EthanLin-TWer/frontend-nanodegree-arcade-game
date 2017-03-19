@@ -1,4 +1,3 @@
-import Resources from './resources'
 import { Movable } from './Movable'
 import { Game, Speed } from './constants'
 
@@ -13,10 +12,6 @@ export class Enemy extends Movable {
       if (this.x > Game.BOARD_WIDTH) {
          this.x -= Game.BOARD_WIDTH
       }
-   }
-
-   render() {
-      ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }
 
    checkCollision(player) {
