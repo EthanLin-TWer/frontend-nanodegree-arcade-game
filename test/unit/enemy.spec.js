@@ -1,8 +1,7 @@
 import { describe, it, beforeEach } from 'mocha'
 import { expect } from 'chai'
 import { Enemy } from '../../js/Enemy'
-import { Game } from '../../js/game-constants'
-import { Speed } from '../../js/speed'
+import { Game, Speed } from '../../js/constants'
 
 describe('game enemy', () => {
    it('should be able to move', () => {

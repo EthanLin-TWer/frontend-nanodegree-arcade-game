@@ -1,5 +1,5 @@
 import Resources from './resources'
-import { Game } from './game-constants'
+import { Game } from './constants'
 
 // Now write your own player class
 // This class requires an update(), render() and

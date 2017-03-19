@@ -17,4 +17,6 @@ export class Enemy {
    }
 }
 
-export const allEnemies = [new Enemy(1, 2, 300)]
+export const allEnemies = [
+   // new Enemy(Game.col(2), Game.row(1), Speed.FAST)
+]

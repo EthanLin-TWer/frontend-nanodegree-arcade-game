@@ -1,7 +1,7 @@
 import { describe, it, beforeEach } from 'mocha'
 import { expect } from 'chai'
 import { Player } from '../../js/Player'
-import { Game } from '../../js/game-constants'
+import { Game } from '../../js/constants'
 
 describe('game player', () => {
    let player
