@@ -69,4 +69,16 @@ describe('game player', () => {
       expect(player.x).to.equal(Game.col(3))
       expect(player.y).to.equal(Game.row(5))
    })
+
+
+   it('should not be reset if player still on the game', () => {
+      player = new Player(Game.col(1), Game.row(4))
+      let wins = Sinon.stub(player, 'wins')
+      wins.returns(false)
+
+      player.update()
+
+      expect(player.x).to.equal(Game.col(1))
+      expect(player.y).to.equal(Game.row(4))
+   })
 })
