@@ -6,17 +6,16 @@ import { Speed } from '../../js/speed'
 
 describe('game enemy', () => {
    it('should be able to move', () => {
-      let enemy = new Enemy(1, 2, Speed.NORMAL)
-      enemy.update(1/1000)
+      let enemy = new Enemy(Game.col(1), Game.row(2), Speed.NORMAL)
+      enemy.update(1)
 
-      expect(enemy.x).to.not.equal(1)
+      expect(enemy.x).to.not.equal(Game.col(1))
    })
 
    it('should be able to move very fast', () => {
-      let enemy = new Enemy(1, 2, 500)
-      enemy.update(1/1000)
+      let enemy = new Enemy(Game.col(1), Game.row(2), Speed.VERY_FAST)
+      enemy.update(1)
 
-      expect(enemy.speed).to.equal(500)
-      expect(enemy.x).to.equal(1 + 1 / 1000 * 500)
+      expect(enemy.speed).to.equal(Speed.VERY_FAST)
    })
 })
