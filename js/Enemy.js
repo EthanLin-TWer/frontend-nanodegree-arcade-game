@@ -1,4 +1,5 @@
 import Resources from './resources'
+import { Game } from './constants'
 
 export class Enemy {
    constructor(x, y, speed) {
@@ -19,7 +20,7 @@ export class Enemy {
    checkCollision(player) {
       if (player.y !== this.y) return false
 
-      return Math.abs(player.x - this.x) <= 12
+      return Math.abs(player.x - this.x) <= Game.COLLISION_RADIUS
    }
 }
 
