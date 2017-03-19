@@ -44,4 +44,18 @@ describe('game player', () => {
 
       expect(wins).to.be.true
    })
+
+   it('should game continue when player not reached the top row', () => {
+      player = new Player(Game.col(4), Game.row(1))
+      let wins = player.wins()
+
+      expect(wins).to.be.false
+   })
+
+   it('should game continue when player not reached the top row', () => {
+      player = new Player(Game.col(4), Game.row(-1))
+      let wins = player.wins()
+
+      expect(wins).to.be.false
+   })
 })
