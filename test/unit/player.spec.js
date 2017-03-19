@@ -37,4 +37,11 @@ describe('game player', () => {
       expect(x).to.equal(Game.col(3))
       expect(y).to.equal(Game.row(4))
    })
+
+   it('should win when reaches the top row', () => {
+      player = new Player(Game.col(4), Game.row(0))
+      let wins = player.wins()
+
+      expect(wins).to.be.true
+   })
 })

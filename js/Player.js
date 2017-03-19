@@ -12,7 +12,14 @@ export class Player {
    }
 
    update() {
+      if (this.wins()) {
+         this.x = 202
+         this.y = 83 * 3 + 55
+      }
+   }
 
+   wins() {
+      return this.y === Game.row(0)
    }
 
    render() {
