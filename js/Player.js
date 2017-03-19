@@ -1,14 +1,13 @@
 import Resources from './resources'
 import { Game } from './constants'
+import { Movable } from './Movable'
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-export class Player {
+export class Player extends Movable {
    constructor(x, y) {
-      this.x = x
-      this.y = y
-      this.sprite = 'images/char-boy.png'
+      super(x, y, 'images/char-boy.png')
    }
 
    static initialPosition() {

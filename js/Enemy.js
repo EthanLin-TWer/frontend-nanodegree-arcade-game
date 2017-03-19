@@ -1,12 +1,11 @@
 import Resources from './resources'
+import { Movable } from './Movable'
 import { Game, Speed } from './constants'
 
-export class Enemy {
+export class Enemy extends Movable {
    constructor(x, y, speed) {
-      this.x = x
-      this.y = y
+      super(x, y, 'images/enemy-bug.png')
       this.speed = speed
-      this.sprite = 'images/enemy-bug.png'
    }
 
    update(dt) {
