@@ -11,6 +11,10 @@ export class Player {
       this.sprite = 'images/char-boy.png'
    }
 
+   static initialPosition() {
+      return new Player(Game.col(3), Game.row(5))
+   }
+
    update() {
       if (this.wins()) {
          this.x = 202

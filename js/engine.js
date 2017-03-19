@@ -92,7 +92,7 @@ var Engine = (function (global) {
    function checkCollisions() {
       let collides = allEnemies.some(enemy => enemy.checkCollision(player))
       if (collides) {
-         player = new Player(Game.col(3), Game.row(5))
+         player = Player.initialPosition()
       }
    }
 
@@ -172,7 +172,7 @@ var Engine = (function (global) {
     * those sorts of things. It's only called once by the init() method.
     */
    function reset() {
-      player = new Player(Game.col(3), Game.row(5))
+      player = Player.initialPosition()
    }
 
    /* Go ahead and load all of the images we know we're going to need to
