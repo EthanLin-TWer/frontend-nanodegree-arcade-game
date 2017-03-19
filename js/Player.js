@@ -1,9 +1,13 @@
+import Resources from './resources'
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-   constructor() {
-
+   constructor(x, y) {
+      this.x = x
+      this.y = y
+      this.sprite = 'images/char-boy.png'
    }
 
    update() {
@@ -11,7 +15,7 @@ class Player {
    }
 
    render() {
-
+      ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }
 
    handleInput() {
@@ -32,4 +36,4 @@ document.addEventListener('keyup', function (e) {
    player.handleInput(allowedKeys[e.keyCode]);
 });
 
-export let player = new Player()
+export let player = new Player(1, 1)
