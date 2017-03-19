@@ -104,5 +104,14 @@ describe('player', () => {
          expect(afterMovement.x).to.equal(Game.col(5))
          expect(afterMovement.y).to.equal(Game.row(3))
       })
+
+      it('should not move out of bottom boundary', () => {
+         player = new Player(Game.col(3), Game.row(5))
+
+         let afterMovement = player.handleInput('down')
+
+         expect(afterMovement.x).to.equal(Game.col(3))
+         expect(afterMovement.y).to.equal(Game.row(5))
+      })
    })
 })
