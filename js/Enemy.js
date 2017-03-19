@@ -1,14 +1,15 @@
 import Resources from './resources'
 
 export class Enemy {
-   constructor(x, y) {
+   constructor(x, y, speed) {
       this.x = x
       this.y = y
+      this.speed = speed
       this.sprite = 'images/enemy-bug.png'
    }
 
    update(dt) {
-      this.x += dt * 1000
+      this.x += dt * this.speed
    }
 
    render() {
@@ -16,4 +17,4 @@ export class Enemy {
    }
 }
 
-export const allEnemies = [new Enemy(1, 2)]
+export const allEnemies = [new Enemy(1, 2, 300)]
