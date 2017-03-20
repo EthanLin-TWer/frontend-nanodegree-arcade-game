@@ -24,11 +24,11 @@ var Engine = (function () {
     * create the canvas element, grab the 2D context for that canvas
     * set the canvas elements height/width and add it to the DOM.
     */
-   let doc = window.document,
+   const doc = window.document,
       win = window,
       canvas = doc.createElement('canvas'),
-      ctx = canvas.getContext('2d'),
-      lastTime
+      ctx = canvas.getContext('2d')
+   let lastTime
    let player
 
    canvas.width = Game.BOARD_WIDTH
@@ -45,7 +45,7 @@ var Engine = (function () {
        * would be the same for everyone (regardless of how fast their
        * computer is) - hurray time!
        */
-      let now = Date.now(),
+      const now = Date.now(),
          dt = (now - lastTime) / 1000.0
 
       /* Call our update/render functions, pass along the time delta to
@@ -90,7 +90,7 @@ var Engine = (function () {
    }
 
    function checkCollisions() {
-      let collides = allEnemies.some(enemy => enemy.checkCollision(player))
+      const collides = allEnemies.some(enemy => enemy.checkCollision(player))
       if (collides) {
          player = Player.initialPosition()
       }
@@ -120,7 +120,7 @@ var Engine = (function () {
       /* This array holds the relative URL to the image used
        * for that particular row of the game level.
        */
-      let rowImages = [
+      const rowImages = [
             'images/water-block.png',   // Top row is water
             'images/stone-block.png',   // Row 1 of 3 of stone
             'images/stone-block.png',   // Row 2 of 3 of stone
@@ -196,7 +196,7 @@ var Engine = (function () {
    // This listens for key presses and sends the keys to your
    // Player.handleInput() method. You don't need to modify this.
    document.addEventListener('keyup', function (e) {
-      let allowedKeys = {
+      const allowedKeys = {
          37: 'left',
          38: 'up',
          39: 'right',

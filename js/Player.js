@@ -15,7 +15,7 @@ export class Player extends Movable {
 
    update() {
       if (this.wins()) {
-         let { x, y } = Player.initialPosition()
+         const { x, y } = Player.initialPosition()
          this.x = x
          this.y = y
       }
