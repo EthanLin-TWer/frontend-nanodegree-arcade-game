@@ -33,6 +33,10 @@ rules:
     - error
   template-curly-spacing:
     - error
+  no-useless-escape:
+    - error
+  func-style:
+    - warn
   no-unused-vars:
     - warn
   no-undef:
