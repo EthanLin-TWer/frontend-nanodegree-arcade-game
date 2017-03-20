@@ -29,6 +29,10 @@ rules:
     - error
   quote-props:
     - error
+  prefer-template:
+    - error
+  template-curly-spacing:
+    - error
   no-unused-vars:
     - warn
   no-undef:
