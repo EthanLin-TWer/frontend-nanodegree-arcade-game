@@ -27,6 +27,8 @@ rules:
       ignoreReadBeforeAssign: false
   object-shorthand:
     - error
+  quote-props:
+    - error
   no-unused-vars:
     - warn
   no-undef:
