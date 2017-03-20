@@ -19,6 +19,8 @@ rules:
   semi:
     - error
     - never
+  no-var:
+    - error
   prefer-const:
     - error
     - destructuring: any
