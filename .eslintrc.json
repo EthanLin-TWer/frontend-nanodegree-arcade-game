@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [ "error", 3 ],
+    "linebreak-style": [ "error", "unix" ],
+    "quotes": [ "error", "single" ],
+    "semi": [ "error", "never" ],
+    "no-var": "error",
+    "prefer-const": [ "error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
+    "object-shorthand": "error",
+    "quote-props": "error",
+    "prefer-template": "error",
+    "template-curly-spacing": "error",
+    "no-useless-escape": "error",
+    "func-style": "warn",
+    "no-undef": "warn",
+    "no-unused-vars": "warn"
+  }
+}
