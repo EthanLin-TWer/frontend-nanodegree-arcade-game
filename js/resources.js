@@ -104,10 +104,7 @@ function onReady(func) {
  * developers by creating a global Resources object.
  */
 const Resources = {
-   load: load,
-   get: get,
-   onReady: onReady,
-   isReady: isReady
+   load, get, onReady, isReady
 }
 
 export default Resources

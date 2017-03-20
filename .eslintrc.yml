@@ -25,6 +25,8 @@ rules:
     - error
     - destructuring: any
       ignoreReadBeforeAssign: false
+  object-shorthand:
+    - error
   no-unused-vars:
     - warn
   no-undef:
