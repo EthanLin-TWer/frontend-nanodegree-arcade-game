@@ -13,28 +13,28 @@ describe('player', () => {
 
    describe('movement functionalities', () => {
       it('should be able to move left', () => {
-         let { x, y } = player.handleInput('left')
+         const { x, y } = player.handleInput('left')
 
          expect(x).to.equal(Game.col(2))
          expect(y).to.equal(Game.row(3))
       })
 
       it('should be able to move right', () => {
-         let { x, y } = player.handleInput('right')
+         const { x, y } = player.handleInput('right')
 
          expect(x).to.equal(Game.col(4))
          expect(y).to.equal(Game.row(3))
       })
 
       it('should be able to move up', () => {
-         let { x, y } = player.handleInput('up')
+         const { x, y } = player.handleInput('up')
 
          expect(x).to.equal(Game.col(3))
          expect(y).to.equal(Game.row(2))
       })
 
       it('should be able to move down', () => {
-         let { x, y } = player.handleInput('down')
+         const { x, y } = player.handleInput('down')
 
          expect(x).to.equal(Game.col(3))
          expect(y).to.equal(Game.row(4))
@@ -44,27 +44,27 @@ describe('player', () => {
    describe('game winning', () => {
       it('should win when reaches the top row', () => {
          player = new Player(Game.col(4), Game.row(0))
-         let wins = player.wins()
+         const wins = player.wins()
 
          expect(wins).to.be.true
       })
 
       it('should game continue when player not reached the top row', () => {
          player = new Player(Game.col(4), Game.row(1))
-         let wins = player.wins()
+         const wins = player.wins()
 
          expect(wins).to.be.false
       })
 
       it('should game continue when player not reached the top row', () => {
          player = new Player(Game.col(4), Game.row(-1))
-         let wins = player.wins()
+         const wins = player.wins()
 
          expect(wins).to.be.false
       })
 
       it('should reset player to initial position after player wins', () => {
-         let wins = Sinon.stub(player, 'wins')
+         const wins = Sinon.stub(player, 'wins')
          wins.returns(true)
 
          player.update()
@@ -76,7 +76,7 @@ describe('player', () => {
 
       it('should not be reset if player still on the game', () => {
          player = new Player(Game.col(1), Game.row(4))
-         let wins = Sinon.stub(player, 'wins')
+         const wins = Sinon.stub(player, 'wins')
          wins.returns(false)
 
          player.update()
@@ -90,7 +90,7 @@ describe('player', () => {
       it('should not move out of left boundary', () => {
          player = new Player(Game.col(1), Game.row(3))
 
-         let afterMovement = player.handleInput('left')
+         const afterMovement = player.handleInput('left')
 
          expect(afterMovement.x).to.equal(Game.col(1))
          expect(afterMovement.y).to.equal(Game.row(3))
@@ -99,7 +99,7 @@ describe('player', () => {
       it('should not move out of right boundary', () => {
          player = new Player(Game.col(5), Game.row(3))
 
-         let afterMovement = player.handleInput('right')
+         const afterMovement = player.handleInput('right')
 
          expect(afterMovement.x).to.equal(Game.col(5))
          expect(afterMovement.y).to.equal(Game.row(3))
@@ -108,7 +108,7 @@ describe('player', () => {
       it('should not move out of bottom boundary', () => {
          player = new Player(Game.col(3), Game.row(5))
 
-         let afterMovement = player.handleInput('down')
+         const afterMovement = player.handleInput('down')
 
          expect(afterMovement.x).to.equal(Game.col(3))
          expect(afterMovement.y).to.equal(Game.row(5))
@@ -117,7 +117,7 @@ describe('player', () => {
       it('should not move out of the top boundary', () => {
          player = new Player(Game.col(3), Game.row(0))
 
-         let afterMovement = player.handleInput('up')
+         const afterMovement = player.handleInput('up')
 
          expect(afterMovement.x).to.equal(Game.col(3))
          expect(afterMovement.y).to.equal(Game.row(0))
