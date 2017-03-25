@@ -16,6 +16,8 @@ export class Player {
    }
 
    handleInput(movement) {
-      return { x: 0, y: 0}
+      this.x = 0
+
+      return this
    }
 }

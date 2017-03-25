@@ -163,7 +163,7 @@ const Engine = (function () {
      */
    function reset() {
         // noop
-      player = new Player(1, 1)
+      player = new Player(202, 0)
    }
 
     /* Go ahead and load all of the images we know we're going to need to
