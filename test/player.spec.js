@@ -1,4 +1,5 @@
 import { Player } from '../js/Player'
+import { Game } from '../js/Game'
 import { expect } from 'chai'
 
 describe('player', () => {
@@ -7,14 +8,14 @@ describe('player', () => {
          const player = new Player(101, 0)
          const position = player.handleInput('left')
 
-         expect(position.x).to.equal(0)
+         expect(position.x).to.equal(101 - Game.CELL_WIDTH)
       })
 
       it('x should be 101 when move left given current x is 202', () => {
          const player = new Player(202, 0)
          const position = player.handleInput('left')
 
-         expect(position.x).to.equal(101)
+         expect(position.x).to.equal(202 - Game.CELL_WIDTH)
       })
    })
 })
