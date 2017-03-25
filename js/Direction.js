@@ -1,3 +1,5 @@
+import { Game } from './Game'
+
 export class Direction {
    static LEFT = new Direction('left')
    static RIGHT = new Direction('right')
@@ -14,5 +16,26 @@ export class Direction {
 
    set direction(value) {
       this._direction = value
+   }
+
+   move(player) {
+      if (this === Direction.LEFT) {
+         player.x -= Game.CELL_WIDTH
+      }
+
+      if (this === Direction.RIGHT) {
+         player.x += Game.CELL_WIDTH
+      }
+
+      if (this === Direction.UP) {
+         // todo: learn move fields refactor
+         player.y -= Game.CELL_HEIGHT
+      }
+
+      if (this === Direction.DOWN) {
+         player.y += Game.CELL_HEIGHT
+      }
+
+      return player
    }
 }

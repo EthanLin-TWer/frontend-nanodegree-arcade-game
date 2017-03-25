@@ -17,6 +17,7 @@
 import Resources from './resources'
 import { allEnemies } from './app'
 import { Player } from './Player'
+import { Direction } from './Direction'
 
 const Engine = (function () {
    /* Predefine the variables we'll be using within this scope,
@@ -187,10 +188,10 @@ const Engine = (function () {
 
    document.addEventListener('keyup', function(e) {
       const allowedKeys = {
-         '37': 'left',
-         '38': 'up',
-         '39': 'right',
-         '40': 'down'
+         '37': Direction.LEFT,
+         '38': Direction.UP,
+         '39': Direction.RIGHT,
+         '40': Direction.DOWN
       }
 
       player.handleInput(allowedKeys[e.keyCode])
