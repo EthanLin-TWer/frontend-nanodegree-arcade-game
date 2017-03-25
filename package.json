@@ -4,8 +4,12 @@
   "description": "frontend-nanodegree-arcade-game ===============================",
   "main": "index.html",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.18.0"
+  },
   "scripts": {
+    "lint": "eslint js/ test/",
     "test": "echo \"good\""
   },
   "repository": {

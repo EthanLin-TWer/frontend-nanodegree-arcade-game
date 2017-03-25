@@ -1,7 +1,9 @@
-            language: node_js
-            node_js:
-              - "node"
-            script:
-              - npm test
-            cache:
-              yarn: true
+language: node_js
+node_js:
+  - "node"
+script:
+#  TURN CHECK ON ONCE INFRA SETUP
+#  - npm run lint
+  - npm test
+cache:
+  yarn: true
