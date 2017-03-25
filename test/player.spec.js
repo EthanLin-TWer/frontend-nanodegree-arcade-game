@@ -1,5 +1,6 @@
 import { Player } from '../js/Player'
 import { Game } from '../js/Game'
+import { describe, it } from 'mocha'
 import { expect } from 'chai'
 
 describe('player', () => {
@@ -19,6 +20,12 @@ describe('player', () => {
          expect(position.x).to.equal(Game.col(3))
       })
 
+      it('should be in row 2 when move up given player is in row 3', () => {
+         const player = new Player(0, 166)
+         const position = player.handleInput('up')
+
+         expect(position.y).to.equal(83)
+      })
    })
 
 })

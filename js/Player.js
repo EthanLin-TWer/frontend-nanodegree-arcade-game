@@ -16,12 +16,17 @@ export class Player {
       ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
    }
 
+
    handleInput(movement) {
       if (movement === 'left') {
          this.x -= Game.CELL_WIDTH
       }
       if (movement === 'right') {
          this.x += Game.CELL_WIDTH
+      }
+      if (movement === 'up') {
+         // todo: learn move fields refactor
+         this.y -= Game.CELL_HEIGHT
       }
 
       return this
