@@ -18,6 +18,7 @@ export class Player {
 
 
    handleInput(movement) {
+      // todo: bad smell: switch
       if (movement === 'left') {
          this.x -= Game.CELL_WIDTH
       }
