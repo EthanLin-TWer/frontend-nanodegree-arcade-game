@@ -18,8 +18,8 @@ import Resources from './resources'
 import { allEnemies } from './app'
 import { Player } from './Player'
 
-const Engine = (function(global) {
-    /* Predefine the variables we'll be using within this scope,
+const Engine = (function () {
+   /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
@@ -184,4 +184,4 @@ const Engine = (function(global) {
      * from within their app.js files.
      */
    window.ctx = ctx
-})(this)
+})()
