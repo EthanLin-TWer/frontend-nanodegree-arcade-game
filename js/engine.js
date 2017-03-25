@@ -15,6 +15,7 @@
  */
 
 import Resources from './resources'
+import { allEnemies, Player } from './app'
 
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
@@ -26,6 +27,7 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
+    let player
 
     canvas.width = 505;
     canvas.height = 606;
@@ -162,6 +164,7 @@ var Engine = (function(global) {
      */
     function reset() {
         // noop
+       player = new Player(1, 1)
     }
 
     /* Go ahead and load all of the images we know we're going to need to
