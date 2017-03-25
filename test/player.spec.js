@@ -26,6 +26,13 @@ describe('player', () => {
 
          expect(position.y).to.equal(83)
       })
+
+      it('should be in row 3 when move down given player is in row 2', () => {
+         const player = new Player(0, 166)
+         const position = player.handleInput('down')
+
+         expect(position.y).to.equal(249)
+      })
    })
 
 })

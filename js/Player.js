@@ -28,6 +28,9 @@ export class Player {
          // todo: learn move fields refactor
          this.y -= Game.CELL_HEIGHT
       }
+      if (movement === 'down') {
+         this.y += Game.CELL_HEIGHT
+      }
 
       return this
    }
