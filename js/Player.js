@@ -1,5 +1,6 @@
 import Resources from './resources'
 import { Game } from './Game'
+import { Direction } from './Direction'
 
 export class Player {
    constructor(x, y) {
@@ -19,17 +20,22 @@ export class Player {
 
    handleInput(movement) {
       // todo: bad smell: switch
-      if (movement === 'left') {
+
+
+      if (movement === Direction.LEFT.direction) {
          this.x -= Game.CELL_WIDTH
       }
-      if (movement === 'right') {
+
+      if (movement === Direction.RIGHT.direction) {
          this.x += Game.CELL_WIDTH
       }
-      if (movement === 'up') {
+
+      if (movement === Direction.UP.direction) {
          // todo: learn move fields refactor
          this.y -= Game.CELL_HEIGHT
       }
-      if (movement === 'down') {
+
+      if (movement === Direction.DOWN.direction) {
          this.y += Game.CELL_HEIGHT
       }
 
