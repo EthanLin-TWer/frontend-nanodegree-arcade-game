@@ -1,4 +1,5 @@
 import Resources from './resources'
+import { Game } from './Game'
 
 export class Player {
    constructor(x, y) {
@@ -17,7 +18,7 @@ export class Player {
 
    handleInput(movement) {
       if (movement === 'left') {
-         this.x -= 101
+         this.x -= Game.CELL_WIDTH
       }
 
       return this
