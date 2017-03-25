@@ -1,0 +1,29 @@
+{
+  "name": "frontend-nanodegree-arcade-game",
+  "version": "1.0.0",
+  "description": "frontend-nanodegree-arcade-game ===============================",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"good\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game.git"
+  },
+  "keywords": [
+    "frontend",
+    "nanodegree",
+    "arcade",
+    "game",
+    "es6",
+    "tdd"
+  ],
+  "author": "Linesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game/issues"
+  },
+  "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-arcade-game#readme"
+}
