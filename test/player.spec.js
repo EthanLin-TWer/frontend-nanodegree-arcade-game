@@ -8,14 +8,16 @@ describe('player', () => {
          const player = new Player(Game.col(2), 0)
          const position = player.handleInput('left')
 
-         expect(position.x).to.equal(101 - Game.CELL_WIDTH)
+         expect(position.x).to.equal(Game.col(1))
       })
 
       it('x should be 101 when move left given current x is 202', () => {
          const player = new Player(Game.col(3), 0)
          const position = player.handleInput('left')
 
-         expect(position.x).to.equal(202 - Game.CELL_WIDTH)
+         expect(position.x).to.equal(Game.col(2))
       })
+
+
    })
 })
