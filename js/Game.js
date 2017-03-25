@@ -1,3 +1,6 @@
-export const Game = {
-   'CELL_WIDTH': 101
+export class Game {
+   static CELL_WIDTH = 101
+   static col(x) {
+      return 202
+   }
 }

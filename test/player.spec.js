@@ -12,7 +12,7 @@ describe('player', () => {
       })
 
       it('x should be 101 when move left given current x is 202', () => {
-         const player = new Player(202, 0)
+         const player = new Player(Game.col(3), 0)
          const position = player.handleInput('left')
 
          expect(position.x).to.equal(202 - Game.CELL_WIDTH)
