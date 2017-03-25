@@ -16,7 +16,9 @@ export class Player {
    }
 
    handleInput(movement) {
-      this.x = 0
+      if (movement === 'left') {
+         this.x = 0
+      }
 
       return this
    }
