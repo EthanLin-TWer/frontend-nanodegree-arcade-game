@@ -20,6 +20,9 @@ export class Player {
       if (movement === 'left') {
          this.x -= Game.CELL_WIDTH
       }
+      if (movement === 'right') {
+         this.x += Game.CELL_WIDTH
+      }
 
       return this
    }
