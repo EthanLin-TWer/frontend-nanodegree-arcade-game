@@ -4,9 +4,9 @@
  * a simple "caching" layer so it will reuse cached images if you attempt
  * to load the same image multiple times.
  */
-var resourceCache = {};
-var loading = [];
-var readyCallbacks = [];
+const resourceCache = {}
+const loading = []
+const readyCallbacks = []
 
 /* This is the publicly accessible image loading function. It accepts
  * an array of strings pointing to image files or a string for a single
@@ -19,14 +19,14 @@ function load(urlOrArr) {
        * loader on that image file
        */
       urlOrArr.forEach(function (url) {
-         _load(url);
-      });
+         _load(url)
+      })
    } else {
       /* The developer did not pass an array to this function,
        * assume the value is a string and call our image loader
        * directly.
        */
-      _load(urlOrArr);
+      _load(urlOrArr)
    }
 }
 
@@ -39,35 +39,35 @@ function _load(url) {
        * our resourceCache array. Just return that image rather
        * re-loading the image.
        */
-      return resourceCache[url];
+      return resourceCache[url]
    } else {
       /* This URL has not been previously loaded and is not present
        * within our cache; we'll need to load this image.
        */
-      var img = new Image();
+      const img = new Image()
       img.onload = function () {
          /* Once our image has properly loaded, add it to our cache
           * so that we can simply return this image if the developer
           * attempts to load this file in the future.
           */
-         resourceCache[url] = img;
+         resourceCache[url] = img
 
          /* Once the image is actually loaded and properly cached,
           * call all of the onReady() callbacks we have defined.
           */
          if (isReady()) {
             readyCallbacks.forEach(function (func) {
-               func();
-            });
+               func()
+            })
          }
-      };
+      }
 
       /* Set the initial cache value to false, this will change when
        * the image's onload event handler is called. Finally, point
        * the image's src attribute to the passed in URL.
        */
-      resourceCache[url] = false;
-      img.src = url;
+      resourceCache[url] = false
+      img.src = url
    }
 }
 
@@ -76,38 +76,38 @@ function _load(url) {
  * the same as calling load() on that URL.
  */
 function get(url) {
-   return resourceCache[url];
+   return resourceCache[url]
 }
 
 /* This function determines if all of the images that have been requested
  * for loading have in fact been properly loaded.
  */
 function isReady() {
-   var ready = true;
-   for (var k in resourceCache) {
+   let ready = true
+   for (const k in resourceCache) {
       if (resourceCache.hasOwnProperty(k) &&
          !resourceCache[k]) {
-         ready = false;
+         ready = false
       }
    }
-   return ready;
+   return ready
 }
 
 /* This function will add a function to the callback stack that is called
  * when all requested images are properly loaded.
  */
 function onReady(func) {
-   readyCallbacks.push(func);
+   readyCallbacks.push(func)
 }
 
 /* This object defines the publicly accessible functions available to
  * developers by creating a global Resources object.
  */
-var Resources = {
-   load: load,
-   get: get,
-   onReady: onReady,
-   isReady: isReady
-};
+const Resources = {
+   load,
+   get,
+   onReady,
+   isReady
+}
 
 export default Resources
