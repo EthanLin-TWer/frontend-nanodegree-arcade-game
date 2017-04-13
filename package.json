@@ -5,8 +5,10 @@
   "main": "index.html",
   "scripts": {
     "lint": "eslint js/ test/",
-    "buildDev": "watchify js/*.js -o dist/bundle.js -t babelify",
-    "test": "mocha test/ --recursive --compilers js:babel-core/register"
+    "build": "browserify js/*.js -o dist/bundle.js -t babelify",
+    "test": "mocha test/ --recursive --compilers js:babel-core/register",
+    "serve": "npm run build && http-server -c-1 -o",
+    "buildDev": "watchify js/*.js -o dist/bundle.js -t babelify"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "browserify": "^14.1.0",
     "chai": "^3.5.0",
     "eslint": "^3.18.0",
+    "http-server": "^0.9.0",
     "mocha": "^3.2.0",
     "sinon": "^2.0.0",
     "watchify": "^3.9.0"
