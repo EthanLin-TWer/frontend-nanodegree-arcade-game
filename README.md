@@ -38,6 +38,14 @@ npm install -g yarn
 * [Game Rubric/Specification][]
 * [Startup Guide][]
 
+## Contribution 我想贡献代码
+
+PR。并请确保新添加的代码有测试覆盖，并且通过了 Travis 的 lint 和测试。
+
+## Licenses 经营执照
+
+MIT。
+
 [Game Rubric/Specification]: https://review.udacity.com/#!/projects/2696458597/rubric
 [Startup Guide]: https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true
 [Badges: Travis CI]: https://travis-ci.org/linesh-simplicity/frontend-nanodegree-arcade-game.svg?branch=master
