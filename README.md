@@ -9,6 +9,7 @@
 正确安装完 npm/yarn 之后，请**在项目的根目录下**运行下面的命令以启动游戏：
 
 ```bash
+npm install
 npm run serve
 ```
 
